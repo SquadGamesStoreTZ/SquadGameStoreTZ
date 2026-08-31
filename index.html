@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Squad Games Store TZ - Euro Truck Simulator 2</title>
+    <title>Squad Games Store - Euro Truck Simulator 2</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -21,46 +21,50 @@
             border: 1px solid #333;
             border-radius: 10px;
             padding: 30px;
-            max-width: 480px;
+            max-width: 440px;
             width: 100%;
-            box-shadow: 0 8px 16px rgba(0,0,0,0.4);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.5);
             text-align: center;
         }
         h1 {
             color: #4CAF50;
-            margin-bottom: 10px;
-            font-size: 1.5rem;
+            margin-bottom: 5px;
+            font-size: 1.4rem;
         }
         .price {
-            font-size: 24px;
+            font-size: 22px;
             font-weight: bold;
             color: #ffffff;
-            margin: 15px 0;
+            margin: 10px 0 20px 0;
         }
-        .description {
-            font-size: 14px;
-            color: #b0b0b0;
-            line-height: 1.5;
-            margin-bottom: 20px;
-            text-align: left;
-        }
-        .steps {
+        .instruction-box {
             background: #2a2a2a;
             padding: 15px;
             border-radius: 6px;
             text-align: left;
             margin-bottom: 20px;
             font-size: 13px;
+            line-height: 1.5;
+            color: #ccc;
         }
-        .steps ol {
-            margin: 0;
-            padding-left: 20px;
+        input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0 15px 0;
+            background: #121212;
+            border: 1px solid #444;
+            color: #fff;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 15px;
+            text-align: center;
         }
-        .steps li {
-            margin-bottom: 6px;
+        input:focus {
+            border-color: #4CAF50;
+            outline: none;
         }
-        .whatsapp-btn {
-            background-color: #25D366;
+        .pay-btn {
+            background-color: #4CAF50;
             color: white;
             padding: 14px 20px;
             border: none;
@@ -69,47 +73,100 @@
             font-weight: bold;
             cursor: pointer;
             width: 100%;
-            text-decoration: none;
-            display: inline-block;
-            box-sizing: border-box;
+            transition: background 0.2s;
         }
-        .whatsapp-btn:hover {
-            background-color: #1ebe5d;
+        .pay-btn:hover {
+            background-color: #43a047;
         }
-        .networks {
+        .hidden {
+            display: none !important;
+        }
+        #status-msg {
             margin-top: 15px;
-            font-size: 12px;
-            color: #888;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        .download-btn {
+            background-color: #2196F3;
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            display: inline-block;
+            width: 100%;
+            box-sizing: border-box;
+            margin-top: 10px;
+        }
+        .download-btn:hover {
+            background-color: #1e88e5;
         }
     </style>
 </head>
 <body>
 
     <div class="card">
-        <h1>🎮 Euro Truck Simulator 2 + 50 Mods</h1>
-        <p class="price">30,000 TZS</p>
-        
-        <div class="description">
-            Get the full game pack and all custom maps/mods instantly delivered to you.
+        <h1>🎮 Euro Truck Simulator 2 + Mods</h1>
+        <div class="price">30,000 TZS</div>
+
+        <!-- PAYMENT FORM SECTION -->
+        <div id="checkout-container">
+            <div class="instruction-box">
+                <strong>Instant Checkout:</strong><br>
+                1. Enter your mobile money number below (Vodacom, Tigo, Airtel, Halotel).<br>
+                2. Click pay to trigger the USSD push prompt on your phone.<br>
+                3. Enter your PIN to instantly unlock your download link.
+            </div>
+
+            <label for="phone-input" style="font-size: 13px; color: #aaa; display: block; text-align: left;">Phone Number:</label>
+            <input type="tel" id="phone-input" placeholder="e.g. 0712345678" maxlength="10">
+            
+            <button class="pay-btn" onclick="startPaymentSimulation()">Pay 30,000 TZS</button>
+            <div id="status-msg"></div>
         </div>
 
-        <div class="steps">
-            <strong>How to buy:</strong>
-            <ol>
-                <li>Send <strong>30,000 TZS</strong> to your preferred network number/Lipa Namba below.</li>
-                <li>Click the WhatsApp button to send your payment message & screenshot.</li>
-                <li>Receive your direct download link immediately!</li>
-            </ol>
-            <p style="margin: 10px 0 0 0; color: #4CAF50;"><strong>Payment Number:</strong> [0692752060]</p>
-        </div>
-
-        <!-- Replace 255XXXXXXXXX below with your actual WhatsApp number starting with 255 -->
-        <a href="https://wa.me/255692752060?text=Hello%20Squad%20Games,%20I%20have%20sent%2030,000%20TZS%20for%20Euro%20Truck%20Simulator%202.%20Here%20is%20my%20confirmation:" class="whatsapp-btn" target="_blank">Send Payment Proof via WhatsApp</a>
-
-        <div class="networks">
-            Accepted Networks: Vodacom M-Pesa, Tigo Pesa, Airtel Money, Halotel
+        <!-- SUCCESS / UNLOCKED DOWNLOAD SECTION -->
+        <div id="success-container" class="hidden">
+            <h3 style="color: #4CAF50; margin-top: 0;">Payment Approved! 🎉</h3>
+            <p style="font-size: 13px; color: #b0b0b0; margin-bottom: 20px;">
+                Your transaction was successful. Click the button below to download your game files instantly.
+            </p>
+            <a href="ets2-links.txt" download class="download-btn">Download ETS2 + Mods Package</a>
         </div>
     </div>
+
+    <script>
+        function startPaymentSimulation() {
+            const phoneInput = document.getElementById('phone-input').value.trim();
+            const statusMsg = document.getElementById('status-msg');
+
+            // Basic validation for Tanzanian phone formatting
+            if (phoneInput.length < 10 || !phoneInput.startsWith('0')) {
+                statusMsg.style.color = '#ff5252';
+                statusMsg.innerText = 'Please enter a valid 10-digit mobile number starting with 0.';
+                return;
+            }
+
+            // Disable input and button during processing
+            document.getElementById('phone-input').disabled = true;
+            
+            statusMsg.style.color = '#ffeb3b';
+            statusMsg.innerText = 'Sending payment push prompt to ' + phoneInput + '...';
+
+            // Simulate the USSD prompt wait time on the user's phone
+            setTimeout(() => {
+                statusMsg.innerText = 'Waiting for you to enter your PIN on your phone...';
+                
+                // Simulate successful transaction verification callback after 4 seconds
+                setTimeout(() => {
+                    document.getElementById('checkout-container').classList.add('hidden');
+                    document.getElementById('success-container').classList.remove('hidden');
+                }, 4000);
+
+            }, 2500);
+        }
+    </script>
 
 </body>
 </html>
