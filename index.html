@@ -3,43 +3,100 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Instant Game Store</title>
+    <title>Squad Games Store TZ - Euro Truck Simulator 2</title>
     <style>
-        body { font-family: Arial, sans-serif; background: #0f172a; color: #f8fafc; margin: 0; padding: 20px; }
-        header { text-align: center; margin-bottom: 30px; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; max-width: 900px; margin: 0 auto; }
-        .card { background: #1e293b; padding: 20px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.3); }
-        .price { color: #34d399; font-size: 1.1rem; font-weight: bold; margin: 10px 0; }
-        .btn { background: #3b82f6; color: white; border: none; padding: 10px 15px; border-radius: 5px; cursor: pointer; font-weight: bold; width: 100%; text-align: center; text-decoration: none; display: block; }
-        .btn:hover { background: #2563eb; }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: #e0e0e0;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .card {
+            background-color: #1e1e1e;
+            border: 1px solid #333;
+            border-radius: 10px;
+            padding: 30px;
+            max-width: 450px;
+            width: 100%;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.4);
+            text-align: center;
+        }
+        h1 {
+            color: #4CAF50;
+            margin-bottom: 10px;
+        }
+        .price {
+            font-size: 24px;
+            font-weight: bold;
+            color: #ffffff;
+            margin: 20px 0;
+        }
+        .description {
+            font-size: 14px;
+            color: #b0b0b0;
+            line-height: 1.5;
+            margin-bottom: 25px;
+            text-align: left;
+        }
+        .features {
+            text-align: left;
+            margin-bottom: 25px;
+            font-size: 14px;
+        }
+        .features li {
+            margin-bottom: 8px;
+        }
+        .pay-btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            text-decoration: display;
+            display: inline-block;
+        }
+        .pay-btn:hover {
+            background-color: #45a049;
+        }
+        .payment-methods {
+            margin-top: 15px;
+            font-size: 12px;
+            color: #888;
+        }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>Instant Game Hub</h1>
-        <p>Pay securely and get your download link instantly!</p>
-    </header>
+    <div class="card">
+        <h1>🎮 Euro Truck Simulator 2</h1>
+        <p class="price">3,000 TZS <span style="font-size: 14px; color: #888;">(~1.20 USD)</span></p>
+        
+        <div class="description">
+            Get the ultimate Euro Truck Simulator 2 package with maps, mods, and everything required for an immersive driving experience.
+        </div>
 
-    <div class="grid" id="game-list"></div>
+        <ul class="features">
+            <li>✔ Instant download access after payment</li>
+            <li>✔ Supports Tigo Pesa, Airtel Money, Vodacom M-Pesa</li>
+            <li>✔ Supports International Visa & Mastercard</li>
+        </ul>
 
-    <script>
-        fetch('games.json')
-            .then(response => response.json())
-            .then(games => {
-                const container = document.getElementById('game-list');
-                games.forEach(game => {
-                    const card = document.createElement('div');
-                    card.className = 'card';
-                    card.innerHTML = `
-                        <h3>${game.title}</h3>
-                        <div class="price">${game.currency} ${game.price}</div>
-                        <a href="https://your-payment-link.com" class="btn">Buy Now</a>
-                    `;
-                    container.appendChild(card);
-                });
-            });
-    </script>
+        <!-- Replace '#' below with your actual Flutterwave Payment Link URL -->
+        <a href="#" class="pay-btn">Buy Now</a>
+
+        <div class="payment-methods">
+            Accepted: Mobile Money (TZ) & International Cards
+        </div>
+    </div>
 
 </body>
 </html>
