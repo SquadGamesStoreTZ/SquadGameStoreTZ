@@ -1,0 +1,19 @@
+# 🎮 Squad Games Store TZ
+
+Get the ultimate **Euro Truck Simulator 2** game package loaded with top maps, mods, and everything you need for the best driving experience!
+
+## 🚀 Live Demo
+
+Check out the live website here: [Squad Games Store TZ](https://squardii.github.io/SquadGameStoreTZ/)
+
+## ✨ What You Get
+
+* **Complete Setup:** Everything packaged together for smooth installation.
+* **Local Support:** Easy payment options tailored for Tanzania.
+* **Instant Access:** Get your download links immediately after payment confirmation.
+
+## 🛠️ How to Buy
+
+1. Visit the live website link above.
+2. Click the **Buy Now** button to complete your secure payment.
+3. Once paid, you will be instantly redirected to your download links.
