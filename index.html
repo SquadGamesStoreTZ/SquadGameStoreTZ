@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instant Game Store</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #0f172a; color: #f8fafc; margin: 0; padding: 20px; }
+        header { text-align: center; margin-bottom: 30px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; max-width: 900px; margin: 0 auto; }
+        .card { background: #1e293b; padding: 20px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.3); }
+        .price { color: #34d399; font-size: 1.1rem; font-weight: bold; margin: 10px 0; }
+        .btn { background: #3b82f6; color: white; border: none; padding: 10px 15px; border-radius: 5px; cursor: pointer; font-weight: bold; width: 100%; text-align: center; text-decoration: none; display: block; }
+        .btn:hover { background: #2563eb; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Instant Game Hub</h1>
+        <p>Pay securely and get your download link instantly!</p>
+    </header>
+
+    <div class="grid" id="game-list"></div>
+
+    <script>
+        fetch('games.json')
+            .then(response => response.json())
+            .then(games => {
+                const container = document.getElementById('game-list');
+                games.forEach(game => {
+                    const card = document.createElement('div');
+                    card.className = 'card';
+                    card.innerHTML = `
+                        <h3>${game.title}</h3>
+                        <div class="price">${game.currency} ${game.price}</div>
+                        <a href="https://your-payment-link.com" class="btn">Buy Now</a>
+                    `;
+                    container.appendChild(card);
+                });
+            });
+    </script>
+
+</body>
+</html>
