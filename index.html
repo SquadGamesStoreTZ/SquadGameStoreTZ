@@ -41,16 +41,34 @@
             font-size: 14px;
             color: #b0b0b0;
             line-height: 1.6;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             text-align: left;
         }
-        .action-btn {
+        .btn-selar {
             background-color: #4CAF50;
             color: white;
-            padding: 14px 20px;
+            padding: 12px 20px;
             border: none;
             border-radius: 5px;
-            font-size: 16px;
+            font-size: 15px;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            text-decoration: none;
+            display: inline-block;
+            box-sizing: border-box;
+            margin-bottom: 12px;
+        }
+        .btn-selar:hover {
+            background-color: #43a047;
+        }
+        .btn-whatsapp {
+            background-color: #25D366;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 15px;
             font-weight: bold;
             cursor: pointer;
             width: 100%;
@@ -58,14 +76,20 @@
             display: inline-block;
             box-sizing: border-box;
         }
-        .action-btn:hover {
-            background-color: #43a047;
+        .btn-whatsapp:hover {
+            background-color: #20ba5a;
         }
-        .networks {
-            margin-top: 20px;
+        .divider {
+            margin: 15px 0;
             font-size: 12px;
             color: #888;
-            line-height: 1.5;
+            text-transform: uppercase;
+        }
+        .networks {
+            margin-top: 15px;
+            font-size: 11px;
+            color: #777;
+            line-height: 1.4;
         }
     </style>
 </head>
@@ -76,14 +100,20 @@
         <div class="price">30,000 TZS</div>
         
         <div class="description">
-            Get the ultimate driving experience packed with custom Tanzanian maps, buses, trucks, and full installation support files. Ready for instant download after secure checkout.
+            Get the ultimate driving experience packed with custom Tanzanian maps, buses, trucks, and installation support files.
         </div>
 
-        <a href="https://selar.com/v38v68088b" class="action-btn" target="_blank">Buy Now (30,000 TZS)</a>
+        <!-- OPTION 1: AUTOMATED CHECKOUT VIA SELAR (Airtel, Tigo, Halotel) -->
+        <a href="https://selar.com/v38v68088b" class="btn-selar" target="_blank">Pay via Selar (Automated)</a>
+
+        <div class="divider">Or for Vodacom M-Pesa</div>
+
+        <!-- OPTION 2: MANUAL WHATSAPP / DIRECT PAYMENT -->
+        <a href="https://wa.me/255XXXXXXXXX?text=Hi,%20I%20want%20to%20buy%20Euro%20Truck%20Simulator%202%20for%2030,000%20TZS.%20Here%20is%20my%20payment%20confirmation." class="btn-whatsapp" target="_blank">Pay via WhatsApp (Vodacom/Others)</a>
 
         <div class="networks">
-            <strong>Accepted Payment Networks:</strong><br>
-            Vodacom M-Pesa, Tigo Pesa, Airtel Money, & Halotel
+            <strong>Selar:</strong> Airtel, Tigo, Halotel<br>
+            <strong>WhatsApp:</strong> Vodacom M-Pesa, Tigo Pesa, Airtel Money
         </div>
     </div>
 
