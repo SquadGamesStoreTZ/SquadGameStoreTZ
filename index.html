@@ -37,12 +37,16 @@
             color: #ffffff;
             margin: 15px 0;
         }
-        .description {
-            font-size: 14px;
-            color: #b0b0b0;
-            line-height: 1.6;
+        .instruction-box {
+            background-color: #262626;
+            border-left: 4px solid #4CAF50;
+            padding: 15px;
             margin-bottom: 20px;
             text-align: left;
+            font-size: 13px;
+            line-height: 1.6;
+            color: #ccc;
+            border-radius: 4px;
         }
         .btn-selar {
             background-color: #4CAF50;
@@ -85,12 +89,6 @@
             color: #888;
             text-transform: uppercase;
         }
-        .networks {
-            margin-top: 15px;
-            font-size: 11px;
-            color: #777;
-            line-height: 1.4;
-        }
     </style>
 </head>
 <body>
@@ -99,22 +97,21 @@
         <h1>🎮 Euro Truck Simulator 2 + 50 Mods</h1>
         <div class="price">30,000 TZS</div>
         
-        <div class="description">
-            Get the ultimate driving experience packed with custom Tanzanian maps, buses, trucks, and installation support files.
+        <!-- AUTOMATED OPTION (SELAR) -->
+        <a href="https://selar.com/v38v68088b" class="btn-selar" target="_blank">Pay Online (Airtel, Tigo, Halotel)</a>
+
+        <div class="divider">Or Pay Manually (Vodacom M-Pesa & Others)</div>
+
+        <!-- MANUAL PAYMENT STEP-BY-STEP INSTRUCTIONS -->
+        <div class="instruction-box">
+            <strong>Step 1: Send Money First</strong><br>
+            Send <strong>30,000 TZS</strong> to your preferred network number or Lipa Namba.<br><br>
+            <strong>Step 2: Send Confirmation</strong><br>
+            After making the payment, click the button below to send your confirmation message and get your download link instantly.
         </div>
 
-        <!-- OPTION 1: AUTOMATED CHECKOUT VIA SELAR (Airtel, Tigo, Halotel) -->
-        <a href="https://selar.com/v38v68088b" class="btn-selar" target="_blank">Pay via Selar (Automated)</a>
-
-        <div class="divider">Or for Vodacom M-Pesa</div>
-
-        <!-- OPTION 2: MANUAL WHATSAPP / DIRECT PAYMENT -->
-        <a href="https://wa.me/255692752060?text=Hi,%20I%20want%20to%20buy%20Euro%20Truck%20Simulator%202%20for%2030,000%20TZS.%20Here%20is%20my%20payment%20confirmation." class="btn-whatsapp" target="_blank">Pay via WhatsApp (Vodacom/Others)</a>
-
-        <div class="networks">
-            <strong>Selar:</strong> Airtel, Tigo, Halotel<br>
-            <strong>WhatsApp:</strong> Vodacom M-Pesa, Tigo Pesa, Airtel Money
-        </div>
+        <!-- POST-PAYMENT WHATSAPP MESSAGE BUTTON -->
+        <a href="https://wa.me/255692752060?text=Hello%20Squad%20Games,%20I%20have%20sent%2030,000%20TZS%20for%20Euro%20Truck%20Simulator%202.%20Here%20is%20my%20confirmation:" class="btn-whatsapp" target="_blank">I Have Paid — Send Confirmation via WhatsApp</a>
     </div>
 
 </body>
