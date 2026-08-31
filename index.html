@@ -21,7 +21,7 @@
             border: 1px solid #333;
             border-radius: 10px;
             padding: 30px;
-            max-width: 450px;
+            max-width: 480px;
             width: 100%;
             box-shadow: 0 8px 16px rgba(0,0,0,0.4);
             text-align: center;
@@ -29,45 +29,54 @@
         h1 {
             color: #4CAF50;
             margin-bottom: 10px;
+            font-size: 1.5rem;
         }
         .price {
             font-size: 24px;
             font-weight: bold;
             color: #ffffff;
-            margin: 20px 0;
+            margin: 15px 0;
         }
         .description {
             font-size: 14px;
             color: #b0b0b0;
             line-height: 1.5;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             text-align: left;
         }
-        .features {
+        .steps {
+            background: #2a2a2a;
+            padding: 15px;
+            border-radius: 6px;
             text-align: left;
-            margin-bottom: 25px;
-            font-size: 14px;
+            margin-bottom: 20px;
+            font-size: 13px;
         }
-        .features li {
-            margin-bottom: 8px;
+        .steps ol {
+            margin: 0;
+            padding-left: 20px;
         }
-        .pay-btn {
-            background-color: #4CAF50;
+        .steps li {
+            margin-bottom: 6px;
+        }
+        .whatsapp-btn {
+            background-color: #25D366;
             color: white;
-            padding: 12px 20px;
+            padding: 14px 20px;
             border: none;
             border-radius: 5px;
             font-size: 16px;
             font-weight: bold;
             cursor: pointer;
             width: 100%;
-            text-decoration: display;
+            text-decoration: none;
             display: inline-block;
+            box-sizing: border-box;
         }
-        .pay-btn:hover {
-            background-color: #45a049;
+        .whatsapp-btn:hover {
+            background-color: #1ebe5d;
         }
-        .payment-methods {
+        .networks {
             margin-top: 15px;
             font-size: 12px;
             color: #888;
@@ -77,26 +86,30 @@
 <body>
 
     <div class="card">
-        <h1>🎮 Euro Truck Simulator 2</h1>
-       <p class="price">30,000 TZS <span style="font-size: 14px; color: #888;">(~12.00 USD)</span></p>
+        <h1>🎮 Euro Truck Simulator 2 + 50 Mods</h1>
+        <p class="price">30,000 TZS</p>
         
         <div class="description">
-            Get the ultimate Euro Truck Simulator 2 package with maps, mods, and everything required for an immersive driving experience.
+            Get the full game pack and all custom maps/mods instantly delivered to you.
         </div>
 
-        <ul class="features">
-            <li>✔ Instant download access after payment</li>
-            <li>✔ Supports Tigo Pesa, Airtel Money, Vodacom M-Pesa</li>
-            <li>✔ Supports International Visa & Mastercard</li>
-        </ul>
+        <div class="steps">
+            <strong>How to buy:</strong>
+            <ol>
+                <li>Send <strong>30,000 TZS</strong> to your preferred network number/Lipa Namba below.</li>
+                <li>Click the WhatsApp button to send your payment message & screenshot.</li>
+                <li>Receive your direct download link immediately!</li>
+            </ol>
+            <p style="margin: 10px 0 0 0; color: #4CAF50;"><strong>Payment Number:</strong> [PUT YOUR PHONE NUMBER HERE]</p>
+        </div>
 
-        <!-- Replace '#' below with your actual Flutterwave Payment Link URL -->
-        <a href="#" class="pay-btn">Buy Now</a>
+        <!-- Replace YOUR_WHATSAPP_NUMBER with your phone number starting with country code, e.g., 2557XXXXXXXX -->
+        <a href="https://wa.me/255XXXXXXXXX?text=Hello%20Squad%20Games,%20I%20have%20sent%2030,000%20TZS%20for%20Euro%20Truck%20Simulator%202.%20Here%20is%20my%20confirmation:" class="whatsapp-btn" target="_blank">Send Payment Proof via WhatsApp</a>
 
-        <div class="payment-methods">
-            Accepted: Mobile Money (TZ) & International Cards
+        <div class="networks">
+            Accepted Networks: Vodacom M-Pesa, Tigo Pesa, Airtel Money, Halotel
         </div>
     </div>
 
 </body>
-</html>
+</html>-
