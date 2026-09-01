@@ -27,5 +27,21 @@
         </div>
     </div>
 
+<<<<<<< HEAD
 </body>
 </html>
+=======
+Check out the live website here: [Squad Games Store TZ](https://squadgamesstoretz.github.io/SquadGameStoreTZ/)
+
+## ✨ What You Get
+
+* **Complete Setup:** Everything packaged together for smooth installation.
+* **Local Support:** Easy payment options tailored for Tanzania.
+* **Instant Access:** Get your download links immediately after payment confirmation.
+
+## 🛠️ How to Buy
+
+1. Visit the live website link above.
+2. Click the **Buy Now** button to complete your secure payment.
+3. Once paid, you will be instantly redirected to your download links.
+>>>>>>> d26810cb18516d366f576f5431f25e65bc4afb0e
