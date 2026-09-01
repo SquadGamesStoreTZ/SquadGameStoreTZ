@@ -107,6 +107,7 @@
         .price {
             font-weight: bold;
             color: #ffffff;
+            font-size: 1.1rem;
         }
         .btn-download {
             background: #25d366;
@@ -137,9 +138,7 @@
             <p style="color: var(--text-muted); margin-top: 5px;">Download ETS 2 PC Mods, Maps & Mobile Games</p>
         </header>
 
-        <main id="game-grid" class="game-grid">
-            <p style="text-align: center; color: var(--text-muted);">Loading games...</p>
-        </main>
+        <main id="game-grid" class="game-grid"></main>
 
         <footer class="footer-note">
             Squad Games Store TZ &copy; 2026. All rights reserved.
@@ -147,41 +146,57 @@
     </div>
 
     <script>
+        const games = [
+            {
+                title: "Euro Truck Simulator 2 - PC Edition",
+                platform: "PC",
+                category: "ETS 2 PC",
+                description: "Full PC game download with high-end graphics and custom maps.",
+                price: "TZS 30,000",
+                image: "ets-2-pc.jpg",
+                downloadUrl: "https://wa.me/255692752060?text=Hello%20Squad%20Games,%20I%20want%20to%20buy%20Euro%20Truck%20Simulator%202%20-%20PC%20Edition%20(TZS%2030,000)."
+            },
+            {
+                title: "Euro Truck Simulator 2 - Mobile Edition",
+                platform: "Android",
+                category: "ETS 2 Mobile",
+                description: "Mobile simulation folder containing regional maps, buses, and assets.",
+                price: "TZS 15,000",
+                image: "ets-2-mobile.jpg",
+                downloadUrl: "https://wa.me/255692752060?text=Hello%20Squad%20Games,%20I%20want%20to%20buy%20Euro%20Truck%20Simulator%202%20-%20Mobile%20Edition%20(TZS%2015,000)."
+            }
+        ];
+
         document.addEventListener("DOMContentLoaded", () => {
-            fetch("./games.json")
-                .then(response => {
-                    if (!response.ok) throw new Error("Failed to load games.json");
-                    return response.json();
-                })
-                .then(games => {
-                    const container = document.getElementById("game-grid");
-                    if (!container) return;
-                    container.innerHTML = "";
+            const container = document.getElementById("game-grid");
+            if (!container) return;
 
-                    games.forEach(game => {
-                        const card = document.createElement("div");
-                        card.classList.add("game-card");
+            container.innerHTML = "";
 
-                        card.innerHTML = `
-                            <div class="card-badge">${game.platform || "Game"}</div>
-                            <img src="${game.image}" alt="${game.title}" class="game-img" onerror="this.src='https://via.placeholder.com/300x180?text=Image+Not+Found'" />
-                            <div class="game-details">
-                                <span class="category-tag">${game.category || ""}</span>
-                                <h3>${game.title}</h3>
-                                <p>${game.description || ""}</p>
-                                <div class="card-action">
-                                    <span class="price">${game.price}</span>
-                                    <a href="${game.downloadUrl}" target="_blank" class="btn-download">Buy Now</a>
-                                </div>
-                            </div>
-                        `;
-                        container.appendChild(card);
-                    });
-                })
-                .catch(err => {
-                    console.error(err);
-                    document.getElementById("game-grid").innerHTML = `<p style="text-align: center; color: #ff5252;">Error loading store items. Please check files.</p>`;
-                });
+            games.forEach((game) => {
+                const card = document.createElement("div");
+                card.classList.add("game-card");
+
+                card.innerHTML = `
+                    <div class="card-badge">${game.platform}</div>
+                    <img src="${game.image}" 
+                         alt="${game.title}" 
+                         class="game-img" 
+                         loading="lazy" 
+                         onerror="this.src='https://via.placeholder.com/300x180?text=Image+Not+Found';" />
+                    <div class="game-details">
+                        <span class="category-tag">${game.category}</span>
+                        <h3>${game.title}</h3>
+                        <p>${game.description}</p>
+                        <div class="card-action">
+                            <span class="price">${game.price}</span>
+                            <a href="${game.downloadUrl}" target="_blank" class="btn-download">Buy Now</a>
+                        </div>
+                    </div>
+                `;
+
+                container.appendChild(card);
+            });
         });
     </script>
 </body>
