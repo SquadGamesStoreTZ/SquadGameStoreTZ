@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  fetch("games.json")
+  fetch("./games.json")
     .then((response) => {
       if (!response.ok) throw new Error("Could not load games.json");
       return response.json();
@@ -14,17 +14,17 @@ function renderGameStore(games) {
   const container = document.getElementById("game-grid");
   if (!container) return;
 
-  container.innerHTML = ""; // Clear existing content
+  container.innerHTML = ""; 
 
   games.forEach((game) => {
     const card = document.createElement("div");
     card.classList.add("game-card");
 
     card.innerHTML = `
-      <div class="card-badge">${game.platform || "Mobile"}</div>
+      <div class="card-badge">${game.platform || "Game"}</div>
       <img src="${game.image}" alt="${game.title}" class="game-img" loading="lazy" />
       <div class="game-details">
-        <span class="category-tag">${game.category || "Games"}</span>
+        <span class="category-tag">${game.category || "General"}</span>
         <h3>${game.title}</h3>
         <p>${game.description || ""}</p>
         <div class="card-action">
