@@ -6,4 +6,13 @@
     "currency": "TZS",
     "downloadLink": "ets2-links.txt"
   }
-]
+],{
+    "id": "ets2-mobile",
+    "title": "Euro Truck Simulator 2 Mobile",
+    "category": "Mobile Games",
+    "platform": "Android",
+    "price": "Free",
+    "image": "https://via.placeholder.com/300x180?text=ETS+2+Mobile",
+    "downloadUrl": "YOUR_GOOGLE_DRIVE_OR_MEDIAFIRE_LINK_HERE",
+    "description": "Experience driving heavy trucks across Europe directly on your mobile device."
+  }
