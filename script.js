@@ -14,7 +14,7 @@ function renderGameStore(games) {
   const container = document.getElementById("game-grid");
   if (!container) return;
 
-  container.innerHTML = ""; 
+  container.innerHTML = "";
 
   games.forEach((game) => {
     const card = document.createElement("div");
@@ -29,7 +29,7 @@ function renderGameStore(games) {
         <p>${game.description || ""}</p>
         <div class="card-action">
           <span class="price">${game.price}</span>
-          <a href="${game.downloadUrl}" target="_blank" class="btn-download">Get Game</a>
+          <a href="${game.downloadUrl}" target="_blank" class="btn-download">Buy Now</a>
         </div>
       </div>
     `;
