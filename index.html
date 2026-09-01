@@ -5,15 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Squad Games Store TZ | ETS 2 & Mobile Games</title>
     
-    <!-- SEO & Open Graph Meta Tags -->
     <meta name="description" content="Buy Euro Truck Simulator 2, Tanzanian bus mods, and mobile games with instant delivery in Tanzania via WhatsApp.">
     <meta name="keywords" content="Euro Truck Simulator 2, ETS2 Tanzania, ETS2 Mobile, Squad Games Store TZ">
-    <meta property="og:title" content="Squad Games Store TZ">
-    <meta property="og:description" content="Instant download via WhatsApp. Tanzanian maps, regional bus mods, and Android games.">
-    <meta property="og:url" content="https://squadgamesstoretz.github.io/SquadGameStoreTZ/">
-    <meta property="og:type" content="website">
 
-    <!-- Styles -->
     <style>
         :root {
             --bg-color: #0f172a;
@@ -143,69 +137,51 @@
             <p style="color: var(--text-muted); margin-top: 5px;">Download ETS 2 PC Mods, Maps & Mobile Games</p>
         </header>
 
-        <!-- Dynamic Game Grid -->
-        <main id="game-grid" class="game-grid"></main>
+        <main id="game-grid" class="game-grid">
+            <p style="text-align: center; color: var(--text-muted);">Loading games...</p>
+        </main>
 
         <footer class="footer-note">
             Squad Games Store TZ &copy; 2026. All rights reserved.
         </footer>
     </div>
 
-    <!-- Script built right into index.html to bypass any external JSON file cache issues -->
     <script>
-        const games = [
-            {
-                title: "Euro Truck Simulator 2 - PC Edition",
-                platform: "PC",
-                category: "ETS 2 PC",
-                description: "Full PC game download with high-end graphics and custom maps.",
-                price: "TZS 30,000",
-                image: "ets-2-pc.jpg",
-                downloadUrl: "https://wa.me/255692752060?text=Hello%20Squad%20Games,%20I%20want%20to%20buy%20Euro%20Truck%20Simulator%202%20-%20PC%20Edition%20(TZS%2030,000)."
-            },
-            {
-                title: "Euro Truck Simulator 2 - Mobile Edition",
-                platform: "Android",
-                category: "ETS 2 Mobile",
-                description: "Mobile simulation folder containing regional maps, buses, and assets.",
-                price: "TZS 15,000",
-                image: "ets-2-mobile.jpg",
-                downloadUrl: "https://wa.me/255692752060?text=Hello%20Squad%20Games,%20I%20want%20to%20buy%20Euro%20Truck%20Simulator%202%20-%20Mobile%20Edition%20(TZS%2015,000)."
-            }
-        ];
-
         document.addEventListener("DOMContentLoaded", () => {
-            const container = document.getElementById("game-grid");
-            if (!container) return;
+            fetch("./games.json")
+                .then(response => {
+                    if (!response.ok) throw new Error("Failed to load games.json");
+                    return response.json();
+                })
+                .then(games => {
+                    const container = document.getElementById("game-grid");
+                    if (!container) return;
+                    container.innerHTML = "";
 
-            container.innerHTML = "";
+                    games.forEach(game => {
+                        const card = document.createElement("div");
+                        card.classList.add("game-card");
 
-            games.forEach((game) => {
-                const card = document.createElement("div");
-                card.classList.add("game-card");
-
-                const imagePath = game.image.startsWith("./") ? game.image : `./${game.image}`;
-
-                card.innerHTML = `
-                    <div class="card-badge">${game.platform || "Game"}</div>
-                    <img src="${imagePath}" 
-                         alt="${game.title}" 
-                         class="game-img" 
-                         loading="lazy" 
-                         onerror="this.onerror=null; this.src='https://via.placeholder.com/300x180?text=Cover+Image+Not+Found';" />
-                    <div class="game-details">
-                        <span class="category-tag">${game.category || "General"}</span>
-                        <h3>${game.title}</h3>
-                        <p>${game.description || ""}</p>
-                        <div class="card-action">
-                            <span class="price">${game.price}</span>
-                            <a href="${game.downloadUrl}" target="_blank" class="btn-download">Buy Now</a>
-                        </div>
-                    </div>
-                `;
-
-                container.appendChild(card);
-            });
+                        card.innerHTML = `
+                            <div class="card-badge">${game.platform || "Game"}</div>
+                            <img src="${game.image}" alt="${game.title}" class="game-img" onerror="this.src='https://via.placeholder.com/300x180?text=Image+Not+Found'" />
+                            <div class="game-details">
+                                <span class="category-tag">${game.category || ""}</span>
+                                <h3>${game.title}</h3>
+                                <p>${game.description || ""}</p>
+                                <div class="card-action">
+                                    <span class="price">${game.price}</span>
+                                    <a href="${game.downloadUrl}" target="_blank" class="btn-download">Buy Now</a>
+                                </div>
+                            </div>
+                        `;
+                        container.appendChild(card);
+                    });
+                })
+                .catch(err => {
+                    console.error(err);
+                    document.getElementById("game-grid").innerHTML = `<p style="text-align: center; color: #ff5252;">Error loading store items. Please check files.</p>`;
+                });
         });
     </script>
 </body>
