@@ -1,176 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <!-- SEO & Search Engine Indexing Tags -->
-  <title>Euro Truck Simulator 2 + 50 Mods | Squad Games</title>
-  <meta name="description" content="Buy Euro Truck Simulator 2 with 50+ custom mods for TZS 30,000. Fast WhatsApp ordering and instant digital delivery in Tanzania.">
-  <meta name="keywords" content="Euro Truck Simulator 2 Tanzania, ETS2 Mods Tanzania, Squad Games, buy ETS2 TZS">
-  <meta name="robots" content="index, follow">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Euro Truck Simulator 2 + 50 Mods | Squad Games Store TZ</title>
+    
+    <!-- SEO & Open Graph Meta Tags -->
+    <meta name="description" content="Buy Euro Truck Simulator 2 full game package with 50+ Tanzanian bus mods, maps, and instant WhatsApp automated delivery in Tanzania.">
+    <meta name="keywords" content="Euro Truck Simulator 2, ETS2 Tanzania, Tanzanian Bus Mods, Squad Games Store TZ, Download ETS2 Mods">
+    <meta property="og:title" content="Euro Truck Simulator 2 + 50 Mods - Squad Games Store TZ">
+    <meta property="og:description" content="Instant download via WhatsApp. Includes Tanzanian maps, regional bus mods, and full setup.">
+    <meta property="og:url" content="https://squadgamesstoretz.github.io/SquadGameStoreTZ/">
+    <meta property="og:type" content="website">
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
+    <!-- Stylesheet -->
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #25d366;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+        }
 
-    body {
-      background-color: #0f172a;
-      color: #f8fafc;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      padding: 20px;
-    }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
 
-    .card {
-      background-color: #1e293b;
-      border: 1px solid #334155;
-      border-radius: 12px;
-      max-width: 480px;
-      width: 100%;
-      padding: 24px;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
-    }
+        .container {
+            max-width: 600px;
+            width: 100%;
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+            box-sizing: border-box;
+        }
 
-    .header {
-      text-align: center;
-      margin-bottom: 20px;
-    }
+        .header {
+            text-align: center;
+            border-bottom: 1px solid #334155;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+        }
 
-    .header h1 {
-      font-size: 1.6rem;
-      color: #38bdf8;
-      margin-bottom: 8px;
-    }
+        .header h1 {
+            margin: 0 0 10px 0;
+            font-size: 1.8rem;
+            color: #ffffff;
+        }
 
-    .price-tag {
-      display: inline-block;
-      background-color: #16a34a;
-      color: #ffffff;
-      font-weight: bold;
-      font-size: 1.2rem;
-      padding: 6px 16px;
-      border-radius: 20px;
-      margin-top: 5px;
-    }
+        .price-badge {
+            display: inline-block;
+            background-color: #0284c7;
+            color: #ffffff;
+            font-weight: bold;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 1.1rem;
+        }
 
-    .features {
-      margin: 20px 0;
-      background-color: #0f172a;
-      padding: 16px;
-      border-radius: 8px;
-    }
+        .features-list {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+        }
 
-    .features h3 {
-      font-size: 1rem;
-      color: #94a3b8;
-      margin-bottom: 10px;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
+        .features-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid #334155;
+            display: flex;
+            align-items: center;
+        }
 
-    .features ul {
-      list-style-type: none;
-    }
+        .features-list li::before {
+            content: "✓";
+            color: var(--accent-color);
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-right: 12px;
+        }
 
-    .features li {
-      margin-bottom: 8px;
-      font-size: 0.95rem;
-      display: flex;
-      align-items: center;
-    }
+        .buy-btn {
+            display: block;
+            width: 100%;
+            background-color: var(--accent-color);
+            color: #ffffff;
+            text-align: center;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+            padding: 16px 0;
+            border-radius: 8px;
+            margin-top: 25px;
+            transition: background-color 0.2s ease-in-out;
+            box-sizing: border-box;
+        }
 
-    .features li::before {
-      content: "✔";
-      color: #22c55e;
-      margin-right: 10px;
-      font-weight: bold;
-    }
+        .buy-btn:hover {
+            background-color: #1eb954;
+        }
 
-    .payment-info {
-      background-color: #0f172a;
-      padding: 16px;
-      border-radius: 8px;
-      margin-bottom: 20px;
-      font-size: 0.9rem;
-      line-height: 1.5;
-    }
-
-    .payment-info h3 {
-      font-size: 1rem;
-      color: #94a3b8;
-      margin-bottom: 8px;
-      text-transform: uppercase;
-    }
-
-    .btn-whatsapp {
-      display: block;
-      width: 100%;
-      background-color: #25d366;
-      color: #ffffff;
-      text-align: center;
-      padding: 14px;
-      border-radius: 8px;
-      font-weight: bold;
-      font-size: 1.1rem;
-      text-decoration: none;
-      transition: background 0.2s ease-in-out;
-    }
-
-    .btn-whatsapp:hover {
-      background-color: #1da851;
-    }
-
-    .footer {
-      text-align: center;
-      font-size: 0.75rem;
-      color: #64748b;
-      margin-top: 15px;
-    }
-  </style>
+        .footer-note {
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 15px;
+        }
+    </style>
 </head>
 <body>
 
-  <div class="card">
-    <div class="header">
-      <h1>Euro Truck Simulator 2</h1>
-      <p style="color: #94a3b8;">Includes 50+ Custom Mods</p>
-      <div class="price-tag">30,000 TZS</div>
-    </div>
+    <div class="container">
+        <div class="header">
+            <h1>Euro Truck Simulator 2 + 50 Mods</h1>
+            <div class="price-badge">30,000 TZS</div>
+        </div>
 
-    <div class="features">
-      <h3>Package Includes:</h3>
-      <ul>
-        <li>Full Game Base Installation</li>
-        <li>50+ High Performance Mods</li>
-        <li>Tanzanian Bus & Map Extensions</li>
-        <li>Instant Digital Link Delivery</li>
-      </ul>
-    </div>
+        <ul class="features-list">
+            <li>Full Game Installation Package</li>
+            <li>50+ Custom Tanzanian Bus Mods & Skins</li>
+            <li>Tanzanian Map Expansions & Routes</li>
+            <li>Instant Automatic WhatsApp File Delivery</li>
+            <li>Step-by-Step Installation Guide</li>
+        </ul>
 
-    <div class="payment-info">
-      <h3>Supported Payments:</h3>
-      <p>• Vodacom M-Pesa</p>
-      <p>• Tigo Pesa</p>
-      <p>• Airtel Money</p>
-      <p>• Halotel (Halopesa)</p>
-    </div>
+        <!-- Automated WhatsApp Payment Trigger Button -->
+        <a href="https://wa.me/255692752060?text=Hello%20Squad%20Games,%20I%20want%20to%20buy%20Euro%20Truck%20Simulator%202%20%2B%2050%20Mods%20for%2030,000%20TZS." class="buy-btn">
+            Buy Now via WhatsApp
+        </a>
 
-    <!-- WhatsApp Link connected to 255692752060 -->
-    <a href="https://wa.me/255692752060?text=Hello%20Squad%20Games,%20I%20want%20to%20buy%20Euro%20Truck%20Simulator%202%20%2B%2050%20Mods%20for%2030,000%20TZS." class="btn-whatsapp" target="_blank">
-      Order via WhatsApp
-    </a>
-
-    <div class="footer">
-      © Squad Games Store • Secure Digital Delivery
+        <div class="footer-note">
+            Supports M-Pesa, Tigo Pesa, Airtel Money & HaloPesa.
+        </div>
     </div>
-  </div>
 
 </body>
 </html>
