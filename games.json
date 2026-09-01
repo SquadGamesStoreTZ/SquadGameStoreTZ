@@ -2,17 +2,21 @@
   {
     "id": 1,
     "title": "Euro Truck Simulator 2 + 50 Mods Pack",
-    "price": 30000,
-    "currency": "TZS",
-    "downloadLink": "ets2-links.txt"
-  }
-],{
+    "category": "PC Games",
+    "platform": "PC",
+    "price": "30,000 TZS",
+    "image": "screenshot-47.png",
+    "downloadUrl": "ets2-links.txt",
+    "description": "Full game package with 50+ Tanzanian bus mods and maps."
+  },
+  {
     "id": "ets2-mobile",
     "title": "Euro Truck Simulator 2 Mobile",
     "category": "Mobile Games",
     "platform": "Android",
     "price": "Free",
-    "image": "screenshot (47).png",
-    "downloadUrl": "YOUR_GOOGLE_DRIVE_OR_MEDIAFIRE_LINK_HERE",
+    "image": "screenshot-47.png",
+    "downloadUrl": "https://www.mediafire.com/folder/k1fisbdp2zpdr/BUS+SIMULATOR+2",
     "description": "Experience driving heavy trucks across Europe directly on your mobile device."
   }
+]
