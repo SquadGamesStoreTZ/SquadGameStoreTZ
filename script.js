@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
-  fetch("./games.json")
+  // Append timestamp to force fetch fresh JSON data from GitHub Pages
+  fetch(`./games.json?v=${new Date().getTime()}`)
     .then((response) => {
       if (!response.ok) throw new Error("Could not load games.json");
       return response.json();
@@ -20,9 +21,16 @@ function renderGameStore(games) {
     const card = document.createElement("div");
     card.classList.add("game-card");
 
+    // Formats image path reliably
+    const imagePath = game.image.startsWith("./") ? game.image : `./${game.image}`;
+
     card.innerHTML = `
       <div class="card-badge">${game.platform || "Game"}</div>
-      <img src="${game.image}" alt="${game.title}" class="game-img" loading="lazy" />
+      <img src="${imagePath}" 
+           alt="${game.title}" 
+           class="game-img" 
+           loading="lazy" 
+           onerror="this.onerror=null; this.src='https://via.placeholder.com/300x180?text=Cover+Image+Not+Found';" />
       <div class="game-details">
         <span class="category-tag">${game.category || "General"}</span>
         <h3>${game.title}</h3>
