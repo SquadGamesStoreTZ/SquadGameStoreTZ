@@ -4,8 +4,8 @@ Get the ultimate **Euro Truck Simulator 2** game package loaded with top maps, m
 
 ## 🚀 Live Demo
 
-Check out the live website here: [Squad Games Store TZ](https://squardii.github.io/SquadGameStoreTZ/)
 
+**[Visit Official Store](https://squadgamesstoretz.github.io/SquadGameStoreTZ/)**
 ## ✨ What You Get
 
 * **Complete Setup:** Everything packaged together for smooth installation.
