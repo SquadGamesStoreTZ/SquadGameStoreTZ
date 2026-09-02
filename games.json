@@ -5,6 +5,8 @@
         "platform": "PC",
         "category": "Simulation / PC",
         "description": "Full Euro Truck Simulator 2 PC game bundled with 50 custom TZ mods.",
+        "requirements": "OS: Windows 10/11 (64-bit) | RAM: 8 GB | Storage: 25 GB | Graphics: GTX 660 / Intel HD 620",
+        "screenshots": ["ets-2-pc.jpg"],
         "price": "TZS 30,000",
         "image": "ets-2-pc.jpg",
         "downloadUrl": "https://wa.me/255692752060?text=Hello%20Squad%20Games%2C%20I%20want%20to%20buy%20Euro%20Truck%20Simulator%202%20%2B%2050%20TZ%20Mods%20Pack%20(TZS%2030%2C000)."
@@ -15,8 +17,10 @@
         "category": "Mobile Games",
         "platform": "Android",
         "description": "Experience driving heavy trucks across Tanzania directly on your Android phone.",
+        "requirements": "OS: Android 8.0+ | RAM: 4 GB minimum | Storage: 3 GB free space",
+        "screenshots": ["ets2-mobile.jpg"],
         "price": "TZS 15,000",
-        "image": "ets-2-mobile.jpg",
+        "image": "ets2-mobile.jpg",
         "downloadUrl": "https://wa.me/255692752060?text=Hello%20Squad%20Games%2C%20I%20want%20to%20buy%20Euro%20Truck%20Simulator%202%20Mobile%20TZ%20(TZS%2015%2C000)."
     },
     {
@@ -25,8 +29,10 @@
         "platform": "PC",
         "category": "Open World / Simulation",
         "description": "It includes 103 DLCs + Multiplayer Game",
+        "requirements": "OS: Windows 10/11 (64-bit) | RAM: 8 GB | Storage: 25 GB | Graphics: GTX 760 or equivalent",
+        "screenshots": ["ets 2 1.57.png"],
         "price": "TZS 5,000",
         "image": "ets 2 1.57.png",
         "downloadUrl": "https://wa.me/255692752060?text=Hello%20Squad%20Games%2C%20I%20want%20to%20buy%20Euro%20Truck%20Simulator%202%20v1.57.2.2s%20%2B%20103%20DLCs%20%2B%20Multiplayer%20Game%20(TZS%205%2C000)."
     }
-]
+]-
