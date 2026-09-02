@@ -20,6 +20,15 @@ header {
     margin-bottom: 20px;
 }
 
+.profile-avatar {
+    width: 85px;
+    height: 85px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #007aff;
+    margin-bottom: 10px;
+}
+
 header h1 {
     margin: 0;
 }
