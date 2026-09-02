@@ -265,16 +265,16 @@ body {
 }
 
 .screenshots-container {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
     margin-top: 10px;
 }
 
 .screenshots-container img {
     width: 100%;
-    max-height: 220px;
-    border-radius: 8px;
+    height: 110px;
+    border-radius: 6px;
     object-fit: cover;
     border: 1px solid #2c2c2e;
 }
