@@ -9,9 +9,9 @@
         "price": "TZS 30,000",
         "image": "images/ets-2-pc.jpg",
         "screenshots": [
-            "pictures/4193b766a912970fac32e8b171d693df.webp",
-            "pictures/f645a854f358ea2a930c5be36d485616.webp",
-            "pictures/Screenshot_20260902_131118_TikTok.jpg"
+            "images/4193b766a912970fac32e8b171d693df.webp",
+            "images/f645a854f358ea2a930c5be36d485616.webp",
+            "images/Screenshot_20260902_131118_TikTok.jpg"
         ],
         "downloadUrl": "https://wa.me/255692752060?text=Hello%20Squad%20Games%2C%20I%20want%20to%20buy%20Euro%20Truck%20Simulator%202%20%2B%2050%20TZ%20Mods%20Pack%20(TZS%2030%2C000)."
     },
@@ -25,9 +25,9 @@
         "price": "TZS 15,000",
         "image": "images/ets-2-mobile.jpg",
         "screenshots": [
-            "pictures/Screenshot_20260902_131001_TikTok.jpg",
-            "pictures/Screenshot_20260902_130935_TikTok.jpg",
-            "pictures/be9b02184c2d31b4c53e8500366db61e.webp"
+            "images/Screenshot_20260902_131001_TikTok.jpg",
+            "images/Screenshot_20260902_130935_TikTok.jpg",
+            "images/be9b02184c2d31b4c53e8500366db61e.webp"
         ],
         "downloadUrl": "https://wa.me/255692752060?text=Hello%20Squad%20Games%2C%20I%20want%20to%20buy%20Euro%20Truck%20Simulator%202%20Mobile%20TZ%20(TZS%2015%2C000)."
     },
@@ -39,11 +39,11 @@
         "description": "It includes 103 DLCs + Multiplayer Game",
         "requirements": "OS: Windows 7/8.1/10/11 (64-bit) | RAM: 8 GB | Storage: 25 GB | GPU: Nvidia GTX 660 / AMD HD 7870",
         "price": "TZS 5,000",
-        "image": "images/ets-2-1.57.png",
+        "image": "images/ets 2 1.57.png",
         "screenshots": [
-            "pictures/Annotation-2026-09-02-125957.png",
-            "pictures/Annotation-2026-09-02-130017.png",
-            "pictures/Annotation-2026-09-02-125943.png"
+            "images/Annotation 2026-09-02 125957.png",
+            "images/Annotation 2026-09-02 130017.png",
+            "images/Annotation 2026-09-02 125943.png"
         ],
         "downloadUrl": "https://wa.me/255692752060?text=Hello%20Squad%20Games%2C%20I%20want%20to%20buy%20Euro%20Truck%20Simulator%202%20v1.57.2.2s%20%2B%20103%20DLCs%20%2B%20Multiplayer%20Game%20(TZS%205%2C000)."
     }
