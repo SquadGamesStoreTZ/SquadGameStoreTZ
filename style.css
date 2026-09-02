@@ -1,38 +1,134 @@
 :root {
     --text-muted: #94a3b8;
+    --accent-blue: #007aff;
+    --btn-cyan: #00bcd4;
+    --bg-dark: #0b0e14;
+    --card-bg: #1c1c1e;
 }
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #121212;
+    background-color: var(--bg-dark);
     color: #ffffff;
     margin: 0;
-    padding: 20px;
+    padding: 0;
 }
 
+/* Navbar Header */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 30px;
+    background-color: #0f131a;
+    border-bottom: 1px solid #1e2430;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav-avatar {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1.5px solid var(--accent-blue);
+}
+
+.brand-title {
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #ffffff;
+}
+
+.nav-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 0.95rem;
+    transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+    color: #ffffff;
+}
+
+/* Page Container */
 .container {
     max-width: 1000px;
     margin: 0 auto;
+    padding: 20px;
 }
 
-header {
+/* Hero Section */
+.hero-section {
     text-align: center;
+    padding: 30px 10px 20px;
+}
+
+.hero-section h1 {
+    font-size: 2rem;
     margin-bottom: 20px;
 }
 
-.profile-avatar {
-    width: 85px;
-    height: 85px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 2px solid #007aff;
-    margin-bottom: 10px;
+.search-box {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    max-width: 600px;
+    margin: 0 auto 20px;
 }
 
-header h1 {
-    margin: 0;
+.search-box input {
+    width: 100%;
+    padding: 12px 16px;
+    border-radius: 8px;
+    border: 1px solid #2c3240;
+    background-color: #151a23;
+    color: #ffffff;
+    outline: none;
+    font-size: 0.9rem;
 }
 
+.btn-search {
+    background-color: var(--btn-cyan);
+    color: #000;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.category-filters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+}
+
+.filter-btn {
+    background-color: #1a202c;
+    color: var(--text-muted);
+    border: 1px solid #2d3748;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    cursor: pointer;
+}
+
+.filter-btn.active, .filter-btn:hover {
+    background-color: var(--btn-cyan);
+    color: #000;
+    border-color: var(--btn-cyan);
+    font-weight: bold;
+}
+
+/* Game Cards Grid */
 .game-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -41,7 +137,7 @@ header h1 {
 }
 
 .game-card {
-    background: #1c1c1e;
+    background: var(--card-bg);
     border: 1px solid #2c2c2e;
     border-radius: 12px;
     overflow: hidden;
@@ -54,7 +150,7 @@ header h1 {
     position: absolute;
     top: 10px;
     right: 10px;
-    background: #007aff;
+    background: var(--accent-blue);
     color: #fff;
     font-size: 0.7rem;
     padding: 4px 8px;
