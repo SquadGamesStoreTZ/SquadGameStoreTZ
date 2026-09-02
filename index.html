@@ -51,7 +51,7 @@
                 <span id="modal-req">Standard System Requirements</span>
             </div>
 
-            <strong style="color: #ffffff; font-size: 0.9rem;">📸 Game Preview:</strong>
+            <strong style="color: #ffffff; font-size: 0.9rem;">📸 Game Preview (Click to Enlarge):</strong>
             <div id="modal-gallery" class="screenshots-container"></div>
 
             <div style="margin-top: 20px; display: flex; justify-content: space-between; align-items: center;">
@@ -59,6 +59,12 @@
                 <a id="modal-buy" href="#" target="_blank" class="btn-download">Buy Now</a>
             </div>
         </div>
+    </div>
+
+    <!-- Full Screen Image Lightbox Modal -->
+    <div id="fullscreen-modal" class="fullscreen-overlay" onclick="closeFullScreen()">
+        <span class="fullscreen-close" onclick="closeFullScreen()">&times;</span>
+        <img id="fullscreen-img" class="fullscreen-img" src="" alt="Full Screen Preview">
     </div>
 
     <script>
@@ -71,9 +77,13 @@
                 category: "Simulation / PC",
                 description: "Full Euro Truck Simulator 2 PC game bundled with 50 custom TZ mods.",
                 requirements: "OS: Windows 10/11 (64-bit) | RAM: 8 GB | Storage: 25 GB | GPU: Intel HD 620 / NVIDIA GTX 660",
-                screenshots: ["ets-2-pc.jpg"],
                 price: "TZS 30,000",
                 image: "ets-2-pc.jpg",
+                screenshots: [
+                    "4193b766a912970fac32e8b171d693df.webp",
+                    "f645a854f358ea2a930c5be36d485616.webp",
+                    "Screenshot_20260902_131118_TikTok.jpg"
+                ],
                 downloadUrl: "https://wa.me/255692752060?text=Hello%20Squad%20Games%2C%20I%20want%20to%20buy%20Euro%20Truck%20Simulator%202%20%2B%2050%20TZ%20Mods%20Pack%20(TZS%2030%2C000)."
             },
             {
@@ -82,9 +92,13 @@
                 category: "Mobile Games",
                 description: "Experience driving heavy trucks across Tanzania directly on your Android phone.",
                 requirements: "OS: Android 8.0+ | RAM: 4 GB minimum | Storage: 3 GB free space",
-                screenshots: ["ets-2-mobile.jpg"],
                 price: "TZS 15,000",
                 image: "ets-2-mobile.jpg",
+                screenshots: [
+                    "Screenshot_20260902_131001_TikTok.jpg",
+                    "Screenshot_20260902_130935_TikTok.jpg",
+                    "be9b02184c2d31b4c53e8500366db61e.webp"
+                ],
                 downloadUrl: "https://wa.me/255692752060?text=Hello%20Squad%20Games%2C%20I%20want%20to%20buy%20Euro%20Truck%20Simulator%202%20Mobile%20TZ%20(TZS%2015%2C000)."
             },
             {
@@ -93,9 +107,13 @@
                 category: "Open World / Simulation",
                 description: "It includes 103 DLCs + Multiplayer Game",
                 requirements: "OS: Windows 7/8.1/10/11 (64-bit) | RAM: 8 GB | Storage: 25 GB | GPU: Nvidia GTX 660 / AMD HD 7870",
-                screenshots: ["ets 2 1.57.png"],
                 price: "TZS 5,000",
                 image: "ets 2 1.57.png",
+                screenshots: [
+                    "Annotation 2026-09-02 125957.png",
+                    "Annotation 2026-09-02 130017.png",
+                    "Annotation 2026-09-02 125943.png"
+                ],
                 downloadUrl: "https://wa.me/255692752060?text=Hello%20Squad%20Games%2C%20I%20want%20to%20buy%20Euro%20Truck%20Simulator%202%20v1.57.2.2s%20%2B%20103%20DLCs%20%2B%20Multiplayer%20Game%20(TZS%205%2C000)."
             }
         ];
@@ -145,9 +163,11 @@
 
             const gallery = document.getElementById("modal-gallery");
             if (game.screenshots && game.screenshots.length > 0) {
-                gallery.innerHTML = game.screenshots.map(img => `<img src="${img}" onerror="this.src='https://via.placeholder.com/300x180?text=Image+Not+Found';">`).join('');
+                gallery.innerHTML = game.screenshots.map(img => 
+                    `<img src="${img}" onclick="openFullScreen('${img}')" onerror="this.src='https://via.placeholder.com/300x180?text=Image+Not+Found';">`
+                ).join('');
             } else {
-                gallery.innerHTML = `<img src="${game.image}">`;
+                gallery.innerHTML = `<img src="${game.image}" onclick="openFullScreen('${game.image}')">`;
             }
 
             document.getElementById("details-modal").classList.add("active");
@@ -161,6 +181,16 @@
 
         function closeModalDirect() {
             document.getElementById("details-modal").classList.remove("active");
+        }
+
+        function openFullScreen(imgSrc) {
+            const fullImg = document.getElementById("fullscreen-img");
+            fullImg.src = imgSrc;
+            document.getElementById("fullscreen-modal").classList.add("active");
+        }
+
+        function closeFullScreen() {
+            document.getElementById("fullscreen-modal").classList.remove("active");
         }
 
         document.addEventListener("DOMContentLoaded", () => {

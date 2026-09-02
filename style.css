@@ -186,7 +186,7 @@ body {
     font-size: 0.85rem;
 }
 
-/* --- Added Styles for Details Button & Modal Popup --- */
+/* Details Modal Styles */
 .action-group {
     display: flex;
     gap: 8px;
@@ -264,6 +264,7 @@ body {
     line-height: 1.4;
 }
 
+/* Screenshot Grid Layout */
 .screenshots-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
@@ -273,8 +274,55 @@ body {
 
 .screenshots-container img {
     width: 100%;
-    height: 110px;
-    border-radius: 8px;
+    height: 100px;
+    border-radius: 6px;
     object-fit: cover;
     border: 1px solid #2c2c2e;
+    cursor: pointer;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.screenshots-container img:hover {
+    transform: scale(1.03);
+    border-color: #007aff;
+}
+
+/* Full Screen Image Viewer Modal */
+.fullscreen-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease;
+}
+
+.fullscreen-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.fullscreen-img {
+    max-width: 90%;
+    max-height: 90vh;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+    object-fit: contain;
+}
+
+.fullscreen-close {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    font-size: 2.5rem;
+    color: #ffffff;
+    cursor: pointer;
+    z-index: 2001;
 }
