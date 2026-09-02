@@ -1,6 +1,7 @@
 [
     {
         "id": 1,
+<<<<<<< HEAD
         "title": "Euro Truck Simulator 2 + 50 TZ Mods Pack",
         "platform": "PC",
         "category": "Simulation / PC",
@@ -18,6 +19,25 @@
         "price": "TZS 15,000",
         "image": "images/ets2-mobile.jpg",
         "downloadUrl": "https://wa.me/255692752060?text=Hello%20Squad%20Games%2C%20I%20want%20to%20buy%20Euro%20Truck%20Simulator%202%20Mobile%20TZ%20(TZS%2015%2C000)."
+=======
+        "title": "Euro Truck Simulator 2 + 50 Mods Pack",
+        "platform": "PC",
+        "category": "Simulation / PC",
+        "description": "Full Euro Truck Simulator 2 PC game bundled with 50 custom mods.",
+        "price": "TZS 30,000",
+        "image": "ets-2-pc.jpg",
+        "downloadUrl": "https://wa.me/255692752060?text=Hello%20Squad%20Games%2C%20I%20want%20to%20buy%20Euro%20Truck%20Simulator%202%20%2B%2050%20Mods%20Pack%20(TZS%2030%2C000)."
+    },
+    {
+        "id": "ets2-mobile",
+        "title": "Euro Truck Simulator 2 Mobile",
+        "category": "Mobile Games",
+        "platform": "Android",
+        "description": "Experience driving heavy trucks across Europe directly on your Android phone.",
+        "price": "TZS 15,000",
+        "image": "images/ets2-mobile.jpg",
+        "downloadUrl": "https://wa.me/255692752060?text=Hello%20Squad%20Games%2C%20I%20want%20to%20buy%20Euro%20Truck%20Simulator%202%20-%20Mobile%20Edition%20(TZS%2015%2C000)."
+>>>>>>> d08ab365d50c2d6d4a726d011df4defaf4a719d1
     },
     {
         "id": "ets2-v157",
@@ -29,4 +49,8 @@
         "image": "ets 2 1.57.png",
         "downloadUrl": "https://wa.me/255692752060?text=Hello%20Squad%20Games%2C%20I%20want%20to%20buy%20Euro%20Truck%20Simulator%202%20v1.57.2.2s%20%2B%20103%20DLCs%20%2B%20Multiplayer%20Game%20(TZS%205%2C000)."
     }
+<<<<<<< HEAD
 ]
+=======
+]
+>>>>>>> d08ab365d50c2d6d4a726d011df4defaf4a719d1
