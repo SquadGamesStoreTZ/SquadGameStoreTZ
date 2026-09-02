@@ -39,29 +39,30 @@
         </footer>
     </div>
 
-    <!-- Details Modal -->
+    <!-- Hidden Game Details Popup Modal -->
     <div id="details-modal" class="modal-overlay" onclick="closeModal(event)">
         <div class="modal-content" onclick="event.stopPropagation()">
-            <span class="close-modal" onclick="closeModalDirect()">&times;</span>
+            <span class="close-btn" onclick="closeModalDirect()">&times;</span>
             <h2 id="modal-title" style="margin-top: 0; font-size: 1.3rem;"></h2>
-            <p id="modal-desc" style="color: var(--text-muted); font-size: 0.85rem; margin-top: 4px;"></p>
+            <p id="modal-desc" style="color: #94a3b8; font-size: 0.9rem; margin-top: 5px;"></p>
             
-            <div id="modal-gallery" class="gallery-grid"></div>
-
-            <div style="margin-top: 10px;">
-                <strong style="color: #007aff; font-size: 0.9rem;">⚙️ System Requirements:</strong>
-                <div id="modal-req" class="req-box"></div>
+            <div class="specs-box">
+                <strong style="color: #007aff;">⚙️ System Requirements:</strong><br>
+                <span id="modal-req">Standard System Requirements</span>
             </div>
 
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 18px;">
-                <span id="modal-price" class="price"></span>
+            <strong style="color: #ffffff; font-size: 0.9rem;">📸 Game Preview:</strong>
+            <div id="modal-gallery" class="screenshots-container"></div>
+
+            <div style="margin-top: 20px; display: flex; justify-content: space-between; align-items: center;">
+                <span id="modal-price" style="font-size: 1.2rem; font-weight: bold; color: #25d366;"></span>
                 <a id="modal-buy" href="#" target="_blank" class="btn-download">Buy Now</a>
             </div>
         </div>
     </div>
 
     <script>
-        let currentGamesList = [];
+        let loadedGamesData = [];
 
         const fallbackGames = [
             {
@@ -69,7 +70,7 @@
                 platform: "PC",
                 category: "Simulation / PC",
                 description: "Full Euro Truck Simulator 2 PC game bundled with 50 custom TZ mods.",
-                requirements: "OS: Windows 10/11 (64-bit) | RAM: 8 GB | Storage: 25 GB | Graphics: GTX 660 / Intel HD 620",
+                requirements: "OS: Windows 10/11 (64-bit) | RAM: 8 GB | Storage: 25 GB | GPU: Intel HD 620 / NVIDIA GTX 660",
                 screenshots: ["ets-2-pc.jpg"],
                 price: "TZS 30,000",
                 image: "ets-2-pc.jpg",
@@ -81,9 +82,9 @@
                 category: "Mobile Games",
                 description: "Experience driving heavy trucks across Tanzania directly on your Android phone.",
                 requirements: "OS: Android 8.0+ | RAM: 4 GB minimum | Storage: 3 GB free space",
-                screenshots: ["ets2-mobile.jpg"],
+                screenshots: ["ets-2-mobile.jpg"],
                 price: "TZS 15,000",
-                image: "ets2-mobile.jpg",
+                image: "ets-2-mobile.jpg",
                 downloadUrl: "https://wa.me/255692752060?text=Hello%20Squad%20Games%2C%20I%20want%20to%20buy%20Euro%20Truck%20Simulator%202%20Mobile%20TZ%20(TZS%2015%2C000)."
             },
             {
@@ -91,7 +92,7 @@
                 platform: "PC",
                 category: "Open World / Simulation",
                 description: "It includes 103 DLCs + Multiplayer Game",
-                requirements: "OS: Windows 10/11 (64-bit) | RAM: 8 GB | Storage: 25 GB | Graphics: GTX 760 or equivalent",
+                requirements: "OS: Windows 7/8.1/10/11 (64-bit) | RAM: 8 GB | Storage: 25 GB | GPU: Nvidia GTX 660 / AMD HD 7870",
                 screenshots: ["ets 2 1.57.png"],
                 price: "TZS 5,000",
                 image: "ets 2 1.57.png",
@@ -100,7 +101,7 @@
         ];
 
         function renderGames(data) {
-            currentGamesList = data;
+            loadedGamesData = data;
             const container = document.getElementById("game-grid");
             if (!container) return;
             container.innerHTML = "";
@@ -122,7 +123,7 @@
                         <div class="card-action">
                             <span class="price">${game.price}</span>
                             <div class="action-group">
-                                <button class="btn-details" onclick="showDetails(${index})">Details</button>
+                                <button class="btn-details" onclick="openDetails(${index})">Details</button>
                                 <a href="${game.downloadUrl}" target="_blank" class="btn-download">Buy Now</a>
                             </div>
                         </div>
@@ -132,26 +133,22 @@
             });
         }
 
-        function showDetails(index) {
-            const game = currentGamesList[index];
+        function openDetails(index) {
+            const game = loadedGamesData[index];
             if (!game) return;
 
             document.getElementById("modal-title").innerText = game.title;
             document.getElementById("modal-desc").innerText = game.description || "";
-            document.getElementById("modal-req").innerText = game.requirements || "Standard System Requirements";
+            document.getElementById("modal-req").innerText = game.requirements || "No minimum requirements specified.";
             document.getElementById("modal-price").innerText = game.price;
             document.getElementById("modal-buy").href = game.downloadUrl;
 
             const gallery = document.getElementById("modal-gallery");
-            gallery.innerHTML = "";
-
-            const imagesToDisplay = (game.screenshots && game.screenshots.length > 0) ? game.screenshots : [game.image];
-            imagesToDisplay.forEach(imgSrc => {
-                const imgEl = document.createElement("img");
-                imgEl.src = imgSrc;
-                imgEl.onerror = function() { this.style.display = 'none'; };
-                gallery.appendChild(imgEl);
-            });
+            if (game.screenshots && game.screenshots.length > 0) {
+                gallery.innerHTML = game.screenshots.map(img => `<img src="${img}" onerror="this.src='https://via.placeholder.com/300x180?text=Image+Not+Found';">`).join('');
+            } else {
+                gallery.innerHTML = `<img src="${game.image}">`;
+            }
 
             document.getElementById("details-modal").classList.add("active");
         }
