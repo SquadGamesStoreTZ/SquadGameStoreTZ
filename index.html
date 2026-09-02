@@ -3,145 +3,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Euro Truck Simulator 2 + 50 Mods | Squad Games Store TZ</title>
-    
-    <!-- SEO & Open Graph Meta Tags -->
-    <meta name="description" content="Buy Euro Truck Simulator 2 full game package with 50+ Tanzanian bus mods, maps, and instant WhatsApp automated delivery in Tanzania.">
-    <meta name="keywords" content="Euro Truck Simulator 2, ETS2 Tanzania, Tanzanian Bus Mods, Squad Games Store TZ, Download ETS2 Mods">
-    <meta property="og:title" content="Euro Truck Simulator 2 + 50 Mods - Squad Games Store TZ">
-    <meta property="og:description" content="Instant download via WhatsApp. Includes Tanzanian maps, regional bus mods, and full setup.">
-    <meta property="og:url" content="https://squadgamesstoretz.github.io/SquadGameStoreTZ/">
-    <meta property="og:type" content="website">
-
-    <!-- Stylesheet -->
-    <style>
-        :root {
-            --bg-color: #0f172a;
-            --card-bg: #1e293b;
-            --accent-color: #25d366;
-            --text-main: #f8fafc;
-            --text-muted: #94a3b8;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            margin: 0;
-            padding: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-        }
-
-        .container {
-            max-width: 600px;
-            width: 100%;
-            background-color: var(--card-bg);
-            border-radius: 12px;
-            padding: 30px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
-            box-sizing: border-box;
-        }
-
-        .header {
-            text-align: center;
-            border-bottom: 1px solid #334155;
-            padding-bottom: 20px;
-            margin-bottom: 20px;
-        }
-
-        .header h1 {
-            margin: 0 0 10px 0;
-            font-size: 1.8rem;
-            color: #ffffff;
-        }
-
-        .price-badge {
-            display: inline-block;
-            background-color: #0284c7;
-            color: #ffffff;
-            font-weight: bold;
-            padding: 6px 16px;
-            border-radius: 20px;
-            font-size: 1.1rem;
-        }
-
-        .features-list {
-            list-style: none;
-            padding: 0;
-            margin: 20px 0;
-        }
-
-        .features-list li {
-            padding: 10px 0;
-            border-bottom: 1px solid #334155;
-            display: flex;
-            align-items: center;
-        }
-
-        .features-list li::before {
-            content: "✓";
-            color: var(--accent-color);
-            font-weight: bold;
-            font-size: 1.2rem;
-            margin-right: 12px;
-        }
-
-        .buy-btn {
-            display: block;
-            width: 100%;
-            background-color: var(--accent-color);
-            color: #ffffff;
-            text-align: center;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.2rem;
-            padding: 16px 0;
-            border-radius: 8px;
-            margin-top: 25px;
-            transition: background-color 0.2s ease-in-out;
-            box-sizing: border-box;
-        }
-
-        .buy-btn:hover {
-            background-color: #1eb954;
-        }
-
-        .footer-note {
-            text-align: center;
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            margin-top: 15px;
-        }
-    </style>
+    <title>Squad Games Store TZ</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+    <!-- Sleek Navigation Header -->
+    <header class="navbar">
+        <div class="brand">
+            <img src="profile.jpg" alt="Profile" class="nav-avatar" onerror="this.style.display='none';" />
+            <div class="brand-text">
+                <span class="brand-title">Squad Games Store TZ</span>
+                <span class="brand-sub">Download ETS 2 PC Mods, Maps & Mobile Games</span>
+            </div>
+        </div>
+        <nav class="nav-links">
+            <a href="https://wa.me/255692752060" target="_blank" class="nav-btn">WhatsApp Support</a>
+        </nav>
+    </header>
+
     <div class="container">
-        <div class="header">
-            <h1>Euro Truck Simulator 2 + 50 Mods</h1>
-            <div class="price-badge">30,000 TZS</div>
+        <!-- Trust Indicators Bar -->
+        <div class="trust-bar">
+            <div class="trust-item">⚡ Instant WhatsApp Delivery</div>
+            <div class="trust-item">🔒 Safe Local Payments</div>
+            <div class="trust-item">🎮 Tested Mods & Maps</div>
         </div>
 
-        <ul class="features-list">
-            <li>Full Game Installation Package</li>
-            <li>50+ Custom Tanzanian Bus Mods & Skins</li>
-            <li>Tanzanian Map Expansions & Routes</li>
-            <li>Instant Automatic WhatsApp File Delivery</li>
-            <li>Step-by-Step Installation Guide</li>
-        </ul>
+        <main id="game-grid" class="game-grid">
+            <p style="text-align: center; color: #94a3b8;">Loading games...</p>
+        </main>
 
-        <!-- Automated WhatsApp Payment Trigger Button -->
-        <a href="https://wa.me/255692752060?text=Hello%20Squad%20Games,%20I%20want%20to%20buy%20Euro%20Truck%20Simulator%202%20%2B%2050%20Mods%20for%2030,000%20TZS." class="buy-btn">
-            Buy Now via WhatsApp
-        </a>
-
-        <div class="footer-note">
-            Supports M-Pesa, Tigo Pesa, Airtel Money & HaloPesa.
-        </div>
+        <footer class="footer-note">
+            Squad Games Store TZ &copy; 2026. All rights reserved.
+        </footer>
     </div>
 
+    <script>
+        const fallbackGames = [
+            {
+                title: "Euro Truck Simulator 2 - PC Edition",
+                platform: "PC",
+                category: "ETS 2 PC",
+                description: "Full PC game download with high-end graphics and custom maps.",
+                price: "TZS 30,000",
+                image: "ets-2-pc.jpg",
+                downloadUrl: "https://wa.me/255692752060?text=Hello%20Squad%20Games,%20I%20want%20to%20buy%20Euro%20Truck%20Simulator%202%20-%20PC%20Edition%20(TZS%2030,000)."
+            },
+            {
+                title: "Euro Truck Simulator 2 - Mobile Edition",
+                platform: "Android",
+                category: "ETS 2 Mobile",
+                description: "Mobile simulation folder containing regional maps, buses, and assets.",
+                price: "TZS 15,000",
+                image: "ets-2-mobile.jpg",
+                downloadUrl: "https://wa.me/255692752060?text=Hello%20Squad%20Games,%20I%20want%20to%20buy%20Euro%20Truck%20Simulator%202%20-%20Mobile%20Edition%20(TZS%2015,000)."
+            }
+        ];
+
+        function renderGames(data) {
+            const container = document.getElementById("game-grid");
+            if (!container) return;
+            container.innerHTML = "";
+
+            data.forEach(game => {
+                const card = document.createElement("div");
+                card.classList.add("game-card");
+                card.innerHTML = `
+                    <div class="card-badge">${game.platform || "Game"}</div>
+                    <img src="${game.image}" 
+                         alt="${game.title}" 
+                         class="game-img" 
+                         loading="lazy" 
+                         onerror="this.src='https://via.placeholder.com/300x180?text=Image+Not+Found';" />
+                    <div class="game-details">
+                        <span class="category-tag">${game.category || ""}</span>
+                        <h3>${game.title}</h3>
+                        <p>${game.description || ""}</p>
+                        <div class="card-action">
+                            <span class="price">${game.price}</span>
+                            <a href="${game.downloadUrl}" target="_blank" class="btn-download">Buy Now</a>
+                        </div>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            fetch("./games.json")
+                .then(response => {
+                    if (!response.ok) throw new Error("Failed to load games.json");
+                    return response.json();
+                })
+                .then(games => renderGames(games))
+                .catch(err => {
+                    console.warn("Using inline game fallback:", err);
+                    renderGames(fallbackGames);
+                });
+        });
+    </script>
 </body>
 </html>
