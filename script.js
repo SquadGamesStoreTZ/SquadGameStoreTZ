@@ -1,68 +1,103 @@
-(function (_0x1a2b3c, _0x4d5e6f) {
-    var _0x3b2a = function (_0x2c1d0e) {
-        while (--_0x2c1d0e) {
-            _0x1a2b3c['push'](_0x1a2b3c['shift']());
-        }
-    };
-    _0x3b2a(++_0x4d5e6f);
-}(_0x5d12 = [
-    'https://wa.me/255692752060?text=Hello%20Squad%20Games%2C%20I%20want%20to%20buy%20Euro%20Truck%20Simulator%202%20v1.57.2.2s%20%2B%20103%20DLCs%20%2B%20Multiplayer%20Game%20(TZS%205%2C000).',
-    'images/ets-2-pc.jpg',
-    'images/Screenshot_20260902_131118_TikTok.jpg',
-    'images/Annotation\x202026-09-02\x20130017.png',
-    'images/Annotation\x202026-09-02\x20125943.png',
-    'Euro\x20Truck\x20Simulator\x202\x20%2B\x2050\x20TZ\x20Mods\x20Pack',
-    'images/4193b766a912970fac32e8b171d693df.webp',
-    'images/f645a854f358ea2a930c5be36d485616.webp',
-    'images/be9b02184c2d31b4c53e8500366db61e.webp',
-    'images/Annotation\x202026-09-02\x20125957.png',
-    'images/ets-2-mobile.jpg',
-    'images/Screenshot_20260902_131001_TikTok.jpg',
-    'images/Screenshot_20260902_130935_TikTok.jpg',
-    'images/ets\x202\x201.57.png'
-], 0x1f4));
+let loadedGamesData = [];
 
-var _0x2a1b = function (_0x1a2b3c, _0x4d5e6f) {
-    _0x1a2b3c = _0x1a2b3c - 0x0;
-    var _0x3b2a = _0x5d12[_0x1a2b3c];
-    return _0x3b2a;
-};
-
-const gamesData = [
-    {
-        'id': 0x1,
-        'title': 'Euro Truck Simulator 2 + 50 TZ Mods Pack',
-        'platform': 'PC',
-        'category': 'Simulation / PC',
-        'description': 'Full Euro Truck Simulator 2 PC game bundled with 50 custom TZ mods.',
-        'requirements': 'OS: Windows 10/11 (64-bit) | RAM: 8 GB | Storage: 25 GB | GPU: Intel HD 620 / NVIDIA GTX 660',
-        'price': 'TZS 30,000',
-        'image': _0x2a1b('0x1'),
-        'screenshots': [_0x2a1b('0x6'), _0x2a1b('0x7'), _0x2a1b('0x2')],
-        'downloadUrl': 'https://wa.me/255692752060?text=Hello%20Squad%20Games%2C%20I%20want%20to%20buy%20Euro%20Truck%20Simulator%202%20%2B%2050%20TZ%20Mods%20Pack%20(TZS%2030%2C000).'
-    },
-    {
-        'id': 'ets2-mobile',
-        'title': 'Euro Truck Simulator 2 Mobile TZ',
-        'category': 'Mobile Games',
-        'platform': 'Android',
-        'description': 'Experience driving heavy trucks across Tanzania directly on your Android phone.',
-        'requirements': 'OS: Android 8.0+ | RAM: 4 GB minimum | Storage: 3 GB free space',
-        'price': 'TZS 15,000',
-        'image': _0x2a1b('0xa'),
-        'screenshots': [_0x2a1b('0xb'), _0x2a1b('0xc'), _0x2a1b('0x8')],
-        'downloadUrl': 'https://wa.me/255692752060?text=Hello%20Squad%20Games%2C%20I%20want%20to%20buy%20Euro%20Truck%20Simulator%202%20Mobile%20TZ%20(TZS%2015%2C000).'
-    },
-    {
-        'id': 'ets2-v157',
-        'title': 'Euro Truck Simulator 2 v1.57.2.2s + 103 DLCs + Multiplayer Game',
-        'platform': 'PC',
-        'category': 'Open World / Simulation',
-        'description': 'It includes 103 DLCs + Multiplayer Game',
-        'requirements': 'OS: Windows 7/8.1/10/11 (64-bit) | RAM: 8 GB | Storage: 25 GB | GPU: Nvidia GTX 660 / AMD HD 7870',
-        'price': 'TZS 5,000',
-        'image': _0x2a1b('0xd'),
-        'screenshots': [_0x2a1b('0x9'), _0x2a1b('0x3'), _0x2a1b('0x4')],
-        'downloadUrl': _0x2a1b('0x0')
+document.addEventListener("DOMContentLoaded", () => {
+    if (typeof gamesData !== "undefined") {
+        renderGameStore(gamesData);
+    } else {
+        console.error("gamesData is not defined. Ensure games-data.js is loaded first.");
     }
-];
+});
+
+function renderGameStore(games) {
+    loadedGamesData = games;
+    const container = document.getElementById("game-grid");
+    if (!container) return;
+
+    container.innerHTML = "";
+
+    games.forEach((game, index) => {
+        const card = document.createElement("div");
+        card.classList.add("game-card");
+
+        card.innerHTML = `
+            <div class="card-badge">${game.platform || "Game"}</div>
+            <img src="${game.image}" 
+                 alt="${game.title}" 
+                 class="game-img" 
+                 loading="lazy" 
+                 onerror="this.onerror=null; this.src='https://via.placeholder.com/300x180?text=Cover+Image+Not+Found';" />
+            <div class="game-details">
+                <span class="category-tag">${game.category || "General"}</span>
+                <h3>${game.title}</h3>
+                <p>${game.description || ""}</p>
+                <div class="card-action">
+                    <span class="price">${game.price}</span>
+                    <div class="action-group">
+                        <button class="btn-details" onclick="openDetails(${index})">Details</button>
+                        <a href="${game.downloadUrl}" target="_blank" class="btn-download">Buy Now</a>
+                    </div>
+                </div>
+            </div>
+        `;
+
+        container.appendChild(card);
+    });
+}
+
+function openDetails(index) {
+    const game = loadedGamesData[index];
+    if (!game) return;
+
+    document.getElementById("modal-title").innerText = game.title;
+    document.getElementById("modal-desc").innerText = game.description || "";
+    document.getElementById("modal-req").innerText = game.requirements || "Standard System Requirements";
+    document.getElementById("modal-price").innerText = game.price;
+    document.getElementById("modal-buy").href = game.downloadUrl;
+
+    const gallery = document.getElementById("modal-gallery");
+    gallery.innerHTML = "";
+
+    if (game.screenshots && game.screenshots.length > 0) {
+        game.screenshots.forEach((imgSrc) => {
+            const img = document.createElement("img");
+            img.src = imgSrc;
+            img.alt = "Screenshot";
+            img.onerror = function () {
+                this.src = "https://via.placeholder.com/300x180?text=Image+Not+Found";
+            };
+            img.onclick = function () {
+                openFullScreen(imgSrc);
+            };
+            gallery.appendChild(img);
+        });
+    } else {
+        const img = document.createElement("img");
+        img.src = game.image;
+        img.onclick = function () {
+            openFullScreen(game.image);
+        };
+        gallery.appendChild(img);
+    }
+
+    document.getElementById("details-modal").classList.add("active");
+}
+
+function closeModal(event) {
+    if (event.target.classList.contains("modal-overlay")) {
+        closeModalDirect();
+    }
+}
+
+function closeModalDirect() {
+    document.getElementById("details-modal").classList.remove("active");
+}
+
+function openFullScreen(imgSrc) {
+    const fullImg = document.getElementById("fullscreen-img");
+    fullImg.src = imgSrc;
+    document.getElementById("fullscreen-modal").classList.add("active");
+}
+
+function closeFullScreen() {
+    document.getElementById("fullscreen-modal").classList.remove("active");
+}
