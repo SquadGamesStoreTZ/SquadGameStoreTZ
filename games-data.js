@@ -30,7 +30,7 @@ var _0x2a1b = function (_0x1a2b3c, _0x4d5e6f) {
 
 const gamesData = [
     {
-        'id': 1,
+        'id': 0x1,
         'title': 'Euro Truck Simulator 2 + 50 TZ Mods Pack',
         'platform': 'PC',
         'category': 'Simulation / PC',
