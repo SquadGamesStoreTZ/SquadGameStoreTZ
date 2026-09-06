@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Squad Games Admin Panel</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+            margin: 0;
+            padding: 20px;
+        }
+        .admin-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #1c1c1e;
+            padding: 24px;
+            border-radius: 12px;
+            border: 1px solid #2c2c2e;
+        }
+        h1 {
+            font-size: 1.4rem;
+            margin-top: 0;
+            color: #007aff;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            font-size: 0.85rem;
+            color: #94a3b8;
+            margin-bottom: 5px;
+        }
+        input, textarea, select {
+            width: 100%;
+            padding: 10px;
+            background: #121212;
+            border: 1px solid #2c2c2e;
+            border-radius: 6px;
+            color: #ffffff;
+            box-sizing: border-box;
+            font-size: 0.9rem;
+        }
+        button {
+            background: #25d366;
+            color: #ffffff;
+            border: none;
+            padding: 12px;
+            width: 100%;
+            border-radius: 6px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        button:hover {
+            background: #1da851;
+        }
+        .output-box {
+            margin-top: 20px;
+        }
+        textarea.json-output {
+            height: 150px;
+            font-family: monospace;
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="admin-container">
+        <h1>🎮 Add New Game Entry</h1>
+        <form id="game-form">
+            <div class="form-group">
+                <label>Game Title</label>
+                <input type="text" id="title" placeholder="e.g. Need for Speed Most Wanted TZ" required>
+            </div>
+            
+            <div class="form-group">
+                <label>Platform</label>
+                <select id="platform">
+                    <option value="PC">PC</option>
+                    <option value="Android">Android</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Category</label>
+                <input type="text" id="category" placeholder="e.g. Racing / Open World" required>
+            </div>
+
+            <div class="form-group">
+                <label>Description</label>
+                <textarea id="description" rows="3" placeholder="Short summary of the game..." required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>System Requirements</label>
+                <input type="text" id="requirements" placeholder="e.g. RAM: 4 GB | Storage: 10 GB" required>
+            </div>
+
+            <div class="form-group">
+                <label>Price</label>
+                <input type="text" id="price" placeholder="e.g. TZS 10,000" required>
+            </div>
+
+            <div class="form-group">
+                <label>Cover Image Path</label>
+                <input type="text" id="image" placeholder="pictures/your-game-cover.jpg" required>
+            </div>
+
+            <div class="form-group">
+                <label>Screenshots (Comma separated paths)</label>
+                <input type="text" id="screenshots" placeholder="pictures/screen1.jpg, pictures/screen2.jpg">
+            </div>
+
+            <button type="button" onclick="generateGameJSON()">Generate Game Entry</button>
+        </form>
+
+        <div class="output-box">
+            <label>Generated JSON Code (Copy and paste this inside games.json):</label>
+            <textarea id="json-output" class="json-output" readonly></textarea>
+        </div>
+    </div>
+
+    <script>
+        function generateGameJSON() {
+            const title = document.getElementById('title').value;
+            const platform = document.getElementById('platform').value;
+            const category = document.getElementById('category').value;
+            const description = document.getElementById('description').value;
+            const requirements = document.getElementById('requirements').value;
+            const price = document.getElementById('price').value;
+            const image = document.getElementById('image').value;
+            
+            const rawScreenshots = document.getElementById('screenshots').value;
+            const screenshots = rawScreenshots ? rawScreenshots.split(',').map(s => s.trim()) : [image];
+
+            const whatsappMessage = `Hello Squad Games, I want to buy ${title} (${price}).`;
+            const downloadUrl = `https://wa.me/255692752060?text=${encodeURIComponent(whatsappMessage)}`;
+
+            const gameObject = {
+                title,
+                platform,
+                category,
+                description,
+                requirements,
+                price,
+                image,
+                screenshots,
+                downloadUrl
+            };
+
+            document.getElementById('json-output').value = JSON.stringify(gameObject, null, 4) + ",";
+        }
+    </script>
+</body>
+</html>
