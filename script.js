@@ -19,6 +19,11 @@ function renderGameStore(games) {
         const card = document.createElement("div");
         card.classList.add("game-card");
 
+        // Check if game price is FREE (case-insensitive)
+        const isFree = game.price && game.price.trim().toUpperCase() === "FREE";
+        const actionBtnText = isFree ? "Get" : "Buy Now";
+        const actionBtnClass = isFree ? "btn-get" : "btn-download";
+
         card.innerHTML = `
             <div class="card-badge">${game.platform || "Game"}</div>
             <img src="${game.image}" 
@@ -34,7 +39,7 @@ function renderGameStore(games) {
                     <span class="price">${game.price}</span>
                     <div class="action-group">
                         <button class="btn-details" onclick="openDetails(${index})">Details</button>
-                        <a href="${game.downloadUrl}" target="_blank" class="btn-download">Buy Now</a>
+                        <a href="${game.downloadUrl}" target="_blank" class="btn-action ${actionBtnClass}">${actionBtnText}</a>
                     </div>
                 </div>
             </div>
@@ -48,11 +53,20 @@ function openDetails(index) {
     const game = loadedGamesData[index];
     if (!game) return;
 
+    // Determine button text and class for modal
+    const isFree = game.price && game.price.trim().toUpperCase() === "FREE";
+    const modalBtnText = isFree ? "Get" : "Buy Now";
+    const modalBtnClass = isFree ? "btn-get" : "btn-download";
+
     document.getElementById("modal-title").innerText = game.title;
     document.getElementById("modal-desc").innerText = game.description || "";
     document.getElementById("modal-req").innerText = game.requirements || "Standard System Requirements";
     document.getElementById("modal-price").innerText = game.price;
-    document.getElementById("modal-buy").href = game.downloadUrl;
+    
+    const buyBtn = document.getElementById("modal-buy");
+    buyBtn.href = game.downloadUrl;
+    buyBtn.innerText = modalBtnText;
+    buyBtn.className = `btn-action ${modalBtnClass}`;
 
     const gallery = document.getElementById("modal-gallery");
     gallery.innerHTML = "";
