@@ -169,27 +169,7 @@ body {
     font-size: 1.1rem;
 }
 
-.btn-download {
-    background: #25d366;
-    color: #fff;
-    text-decoration: none;
-    padding: 8px 14px;
-    border-radius: 6px;
-    font-weight: bold;
-}
-
-.btn-download:hover {
-    background: #1da851;
-}
-
-.footer-note {
-    text-align: center;
-    margin-top: 30px;
-    color: var(--text-muted);
-    font-size: 0.85rem;
-}
-
-/* Details Modal Styles */
+/* Action Group & Buttons */
 .action-group {
     display: flex;
     gap: 8px;
@@ -212,6 +192,71 @@ body {
     background: #3a3a3c;
 }
 
+/* Base button style for dynamic links */
+.btn-action {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    border: none;
+}
+
+/* Paid Game Button (Buy Now) */
+.btn-download {
+    background: #25d366;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 0.85rem;
+    transition: background 0.2s ease, transform 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-download:hover {
+    background: #1da851;
+    transform: translateY(-1px);
+}
+
+/* Free Game Button (Get) */
+.btn-get {
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: #ffffff;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 0.85rem;
+    text-decoration: none;
+    box-shadow: 0 0 10px rgba(16, 185, 129, 0.3);
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-get:hover {
+    background: linear-gradient(135deg, #34d399, #10b981);
+    box-shadow: 0 0 15px rgba(16, 185, 129, 0.5);
+    transform: translateY(-1px);
+}
+
+.footer-note {
+    text-align: center;
+    margin-top: 30px;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+/* Details Modal Styles */
 .modal-overlay {
     position: fixed;
     top: 0;
