@@ -1,30 +1,30 @@
 let loadedGamesData = [];
 
 document.addEventListener("DOMContentLoaded", () => {
-    // Automatically uses gamesData if present, or falls back to games
-    const dataToLoad = typeof gamesData !== "undefined" ? gamesData : (typeof games !== "undefined" ? games : null);
+    // Detects gamesData or games automatically
+    const dataList = (typeof gamesData !== "undefined") ? gamesData : ((typeof games !== "undefined") ? games : null);
 
-    if (dataToLoad) {
-        renderGameStore(dataToLoad);
+    if (dataList) {
+        renderGameStore(dataList);
     } else {
-        console.error("Game data is not defined. Ensure games-data.js is loaded properly.");
+        console.error("No game array found. Check games-data.js.");
     }
 });
 
-function renderGameStore(games) {
-    loadedGamesData = games;
+function renderGameStore(gameList) {
+    loadedGamesData = gameList;
     const container = document.getElementById("game-grid");
     if (!container) return;
 
     container.innerHTML = "";
 
-    games.forEach((game, index) => {
+    gameList.forEach((game, index) => {
         const card = document.createElement("div");
         card.classList.add("game-card");
 
-        // Dynamic check for free price (handles "FREE", "Free", 0, etc.)
-        const priceStr = String(game.price || "").trim().toUpperCase();
-        const isFree = priceStr === "FREE" || priceStr === "0" || priceStr.includes("FREE");
+        // Dynamic check for free pricing
+        const priceText = String(game.price || "").trim().toUpperCase();
+        const isFree = priceText === "FREE" || priceText === "0" || priceText.includes("FREE");
 
         const actionBtnText = isFree ? "Get" : "Buy Now";
         const actionBtnClass = isFree ? "btn-get" : "btn-download";
@@ -58,9 +58,8 @@ function openDetails(index) {
     const game = loadedGamesData[index];
     if (!game) return;
 
-    // Dynamic check for free price in modal
-    const priceStr = String(game.price || "").trim().toUpperCase();
-    const isFree = priceStr === "FREE" || priceStr === "0" || priceStr.includes("FREE");
+    const priceText = String(game.price || "").trim().toUpperCase();
+    const isFree = priceText === "FREE" || priceText === "0" || priceText.includes("FREE");
 
     const modalBtnText = isFree ? "Get" : "Buy Now";
     const modalBtnClass = isFree ? "btn-get" : "btn-download";
