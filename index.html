@@ -123,11 +123,11 @@
                 description: "Need for Speed Most Wanted 2005 (NFS MW) is a classic racing game offering high-speed pursuit and street racing action.",
                 requirements: "OS: Windows 2000/XP/7 | CPU: 1.4GHz Processor | RAM: 256 MB | Storage: 3 GB | GPU: 64 MB DirectX 9.0c compatible Video Card",
                 price: "FREE",
-                image: "pictures/nfsmw-cover.png",
+                image: "pictures/Screenshot (7).png",
                 screenshots: [
-                    "pictures/nfsmw-shot1.png",
-                    "pictures/nfsmw-shot2.png",
-                    "pictures/nfsmw-shot3.png"
+                    "pictures/Screenshot (7).png",
+                    "pictures/Screenshot (8).png",
+                    "pictures/Screenshot (9).png"
                 ],
                 downloadUrl: "https://www.mediafire.com/file_premium/adkj9ovmehh2mva/NFS_Most_Wanted_2005_-_%2528www.apunkagames.com%2529.zip/file"
             }
@@ -143,7 +143,6 @@
                 const card = document.createElement("div");
                 card.classList.add("game-card");
 
-                // Dynamic pricing check
                 const priceText = String(game.price || "").trim().toUpperCase();
                 const isFree = priceText === "FREE" || priceText === "0" || priceText.includes("FREE");
 
