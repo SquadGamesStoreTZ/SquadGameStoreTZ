@@ -115,6 +115,21 @@
                     "pictures/Annotation 2026-09-02 125943.png"
                 ],
                 downloadUrl: "https://wa.me/255692752060?text=Hello%20Squad%20Games%2C%20I%20want%20to%20buy%20Euro%20Truck%20Simulator%202%20v1.57.2.2s%20%2B%20103%20DLCs%20%2B%20Multiplayer%20Game%20(TZS%205%2C000)."
+            },
+            {
+                title: "Need for Speed Most Wanted 2005",
+                platform: "PC",
+                category: "Racing",
+                description: "Need for Speed Most Wanted 2005 (NFS MW) is a classic racing game offering high-speed pursuit and street racing action.",
+                requirements: "OS: Windows 2000/XP/7 | CPU: 1.4GHz Processor | RAM: 256 MB | Storage: 3 GB | GPU: 64 MB DirectX 9.0c compatible Video Card",
+                price: "FREE",
+                image: "pictures/nfsmw-cover.png",
+                screenshots: [
+                    "pictures/nfsmw-shot1.png",
+                    "pictures/nfsmw-shot2.png",
+                    "pictures/nfsmw-shot3.png"
+                ],
+                downloadUrl: "https://www.mediafire.com/file_premium/adkj9ovmehh2mva/NFS_Most_Wanted_2005_-_%2528www.apunkagames.com%2529.zip/file"
             }
         ];
 
@@ -127,6 +142,14 @@
             data.forEach((game, index) => {
                 const card = document.createElement("div");
                 card.classList.add("game-card");
+
+                // Dynamic pricing check
+                const priceText = String(game.price || "").trim().toUpperCase();
+                const isFree = priceText === "FREE" || priceText === "0" || priceText.includes("FREE");
+
+                const actionBtnText = isFree ? "Get" : "Buy Now";
+                const actionBtnClass = isFree ? "btn-get" : "btn-download";
+
                 card.innerHTML = `
                     <div class="card-badge">${game.platform || "Game"}</div>
                     <img src="${game.image}" 
@@ -142,7 +165,7 @@
                             <span class="price">${game.price}</span>
                             <div class="action-group">
                                 <button class="btn-details" onclick="openDetails(${index})">Details</button>
-                                <a href="${game.downloadUrl}" target="_blank" class="btn-download">Buy Now</a>
+                                <a href="${game.downloadUrl}" target="_blank" class="btn-action ${actionBtnClass}">${actionBtnText}</a>
                             </div>
                         </div>
                     </div>
@@ -155,11 +178,21 @@
             const game = loadedGamesData[index];
             if (!game) return;
 
+            const priceText = String(game.price || "").trim().toUpperCase();
+            const isFree = priceText === "FREE" || priceText === "0" || priceText.includes("FREE");
+
+            const modalBtnText = isFree ? "Get" : "Buy Now";
+            const modalBtnClass = isFree ? "btn-get" : "btn-download";
+
             document.getElementById("modal-title").innerText = game.title;
             document.getElementById("modal-desc").innerText = game.description || "";
             document.getElementById("modal-req").innerText = game.requirements || "No minimum requirements specified.";
             document.getElementById("modal-price").innerText = game.price;
-            document.getElementById("modal-buy").href = game.downloadUrl;
+
+            const buyBtn = document.getElementById("modal-buy");
+            buyBtn.href = game.downloadUrl;
+            buyBtn.innerText = modalBtnText;
+            buyBtn.className = `btn-action ${modalBtnClass}`;
 
             const gallery = document.getElementById("modal-gallery");
             if (game.screenshots && game.screenshots.length > 0) {
