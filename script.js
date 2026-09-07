@@ -1,66 +1,124 @@
-var gamesData = [
-  {
-    "id": 1,
-    "title": "Euro Truck Simulator 2 + 50 TZ Mods Pack",
-    "platform": "PC",
-    "category": "Simulation / PC",
-    "description": "Full Euro Truck Simulator 2 PC game bundled with 50 custom TZ mods.",
-    "requirements": "OS: Windows 10/11 (64-bit) | RAM: 8 GB | Storage: 25 GB | GPU: Intel HD 620 / NVIDIA GTX 660",
-    "price": "TZS 30,000",
-    "image": "images/ets-2-pc.jpg",
-    "screenshots": [
-      "images/4193b766a912970fac32e8b171d693df.webp",
-      "images/f645a854f358ea2a930c5be36d485616.webp",
-      "images/Screenshot_20260902_131118_TikTok.jpg"
-    ],
-    "downloadUrl": "https://wa.me/255692752060?text=Hello%20Squad%20Games%2C%20I%20want%20to%20buy%20Euro%20Truck%20Simulator%202%20%2B%2050%20TZ%20Mods%20Pack%20(TZS%2030%2C000)."
-  },
-  {
-    "id": "ets2-mobile",
-    "title": "Euro Truck Simulator 2 Mobile TZ",
-    "category": "Mobile Games",
-    "platform": "Android",
-    "description": "Experience driving heavy trucks across Tanzania directly on your Android phone.",
-    "requirements": "OS: Android 8.0+ | RAM: 4 GB minimum | Storage: 3 GB free space",
-    "price": "TZS 15,000",
-    "image": "images/ets-2-mobile.jpg",
-    "screenshots": [
-      "images/Screenshot_20260902_131001_TikTok.jpg",
-      "images/Screenshot_20260902_130935_TikTok.jpg",
-      "images/be9b02184c2d31b4c53e8500366db61e.webp"
-    ],
-    "downloadUrl": "https://wa.me/255692752060?text=Hello%20Squad%20Games%2C%20I%20want%20to%20buy%20Euro%20Truck%20Simulator%202%20Mobile%20TZ%20(TZS%2015%2C000)."
-  },
-  {
-    "id": "ets2-v157",
-    "title": "Euro Truck Simulator 2 v1.57.2.2s + 103 DLCs + Multiplayer Game",
-    "platform": "PC",
-    "category": "Open World / Simulation",
-    "description": "It includes 103 DLCs + Multiplayer Game",
-    "requirements": "OS: Windows 7/8.1/10/11 (64-bit) | RAM: 8 GB | Storage: 25 GB | GPU: Nvidia GTX 660 / AMD HD 7870",
-    "price": "TZS 5,000",
-    "image": "images/ets 2 1.57.png",
-    "screenshots": [
-      "images/Annotation 2026-09-02 125957.png",
-      "images/Annotation 2026-09-02 130017.png",
-      "images/Annotation 2026-09-02 125943.png"
-    ],
-    "downloadUrl": "https://wa.me/255692752060?text=Hello%20Squad%20Games%2C%20I%20want%20to%20buy%20Euro%20Truck%20Simulator%202%20v1.57.2.2s%20%2B%20103%20DLCs%20%2B%20Multiplayer%20Game%20(TZS%205%2C000)."
-  },
-  {
-    "id": 4,
-    "title": "Need for Speed Most Wanted 2005",
-    "platform": "PC",
-    "category": "Racing",
-    "description": "Need for Speed Most Wanted 2005 (NFS MW) is a classic racing game offering high-speed pursuit and street racing action.",
-    "requirements": "OS: Windows 2000/XP/7 | CPU: 1.4GHz Processor | RAM: 256 MB | Storage: 3 GB | GPU: 64 MB DirectX 9.0c compatible Video Card",
-    "price": "FREE",
-    "image": "images/nfsmw-cover.png",
-    "screenshots": [
-      "images/nfsmw-shot1.png",
-      "images/nfsmw-shot2.png",
-      "images/nfsmw-shot3.png"
-    ],
-    "downloadUrl": "https://www.mediafire.com/file_premium/adkj9ovmehh2mva/NFS_Most_Wanted_2005_-_%2528www.apunkagames.com%2529.zip/file"
-  }
-];
+let loadedGamesData = [];
+
+document.addEventListener("DOMContentLoaded", () => {
+    // Automatically uses gamesData if present, or falls back to games
+    const dataToLoad = typeof gamesData !== "undefined" ? gamesData : (typeof games !== "undefined" ? games : null);
+
+    if (dataToLoad) {
+        renderGameStore(dataToLoad);
+    } else {
+        console.error("Game data is not defined. Ensure games-data.js is loaded properly.");
+    }
+});
+
+function renderGameStore(games) {
+    loadedGamesData = games;
+    const container = document.getElementById("game-grid");
+    if (!container) return;
+
+    container.innerHTML = "";
+
+    games.forEach((game, index) => {
+        const card = document.createElement("div");
+        card.classList.add("game-card");
+
+        // Dynamic check for free price (handles "FREE", "Free", 0, etc.)
+        const priceStr = String(game.price || "").trim().toUpperCase();
+        const isFree = priceStr === "FREE" || priceStr === "0" || priceStr.includes("FREE");
+
+        const actionBtnText = isFree ? "Get" : "Buy Now";
+        const actionBtnClass = isFree ? "btn-get" : "btn-download";
+
+        card.innerHTML = `
+            <div class="card-badge">${game.platform || "Game"}</div>
+            <img src="${game.image}" 
+                 alt="${game.title}" 
+                 class="game-img" 
+                 loading="lazy" 
+                 onerror="this.onerror=null; this.src='https://via.placeholder.com/300x180?text=Cover+Image+Not+Found';" />
+            <div class="game-details">
+                <span class="category-tag">${game.category || "General"}</span>
+                <h3>${game.title}</h3>
+                <p>${game.description || ""}</p>
+                <div class="card-action">
+                    <span class="price">${game.price}</span>
+                    <div class="action-group">
+                        <button class="btn-details" onclick="openDetails(${index})">Details</button>
+                        <a href="${game.downloadUrl}" target="_blank" class="btn-action ${actionBtnClass}">${actionBtnText}</a>
+                    </div>
+                </div>
+            </div>
+        `;
+
+        container.appendChild(card);
+    });
+}
+
+function openDetails(index) {
+    const game = loadedGamesData[index];
+    if (!game) return;
+
+    // Dynamic check for free price in modal
+    const priceStr = String(game.price || "").trim().toUpperCase();
+    const isFree = priceStr === "FREE" || priceStr === "0" || priceStr.includes("FREE");
+
+    const modalBtnText = isFree ? "Get" : "Buy Now";
+    const modalBtnClass = isFree ? "btn-get" : "btn-download";
+
+    document.getElementById("modal-title").innerText = game.title;
+    document.getElementById("modal-desc").innerText = game.description || "";
+    document.getElementById("modal-req").innerText = game.requirements || "Standard System Requirements";
+    document.getElementById("modal-price").innerText = game.price;
+    
+    const buyBtn = document.getElementById("modal-buy");
+    buyBtn.href = game.downloadUrl;
+    buyBtn.innerText = modalBtnText;
+    buyBtn.className = `btn-action ${modalBtnClass}`;
+
+    const gallery = document.getElementById("modal-gallery");
+    gallery.innerHTML = "";
+
+    if (game.screenshots && game.screenshots.length > 0) {
+        game.screenshots.forEach((imgSrc) => {
+            const img = document.createElement("img");
+            img.src = imgSrc;
+            img.alt = "Screenshot";
+            img.onerror = function () {
+                this.src = "https://via.placeholder.com/300x180?text=Image+Not+Found";
+            };
+            img.onclick = function () {
+                openFullScreen(imgSrc);
+            };
+            gallery.appendChild(img);
+        });
+    } else {
+        const img = document.createElement("img");
+        img.src = game.image;
+        img.onclick = function () {
+            openFullScreen(game.image);
+        };
+        gallery.appendChild(img);
+    }
+
+    document.getElementById("details-modal").classList.add("active");
+}
+
+function closeModal(event) {
+    if (event.target.classList.contains("modal-overlay")) {
+        closeModalDirect();
+    }
+}
+
+function closeModalDirect() {
+    document.getElementById("details-modal").classList.remove("active");
+}
+
+function openFullScreen(imgSrc) {
+    const fullImg = document.getElementById("fullscreen-img");
+    fullImg.src = imgSrc;
+    document.getElementById("fullscreen-modal").classList.add("active");
+}
+
+function closeFullScreen() {
+    document.getElementById("fullscreen-modal").classList.remove("active");
+}
