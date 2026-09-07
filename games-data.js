@@ -1,4 +1,4 @@
-var games = [
+var gamesData = [
   {
     "id": 1,
     "title": "Euro Truck Simulator 2 + 50 TZ Mods Pack",
