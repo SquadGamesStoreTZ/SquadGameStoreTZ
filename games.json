@@ -1,4 +1,4 @@
-[
+const gamesData = [
   {
     "id": 1,
     "title": "Euro Truck Simulator 2 + 50 TZ Mods Pack",
@@ -55,12 +55,12 @@
     "description": "Need for Speed Most Wanted 2005 (NFS MW) is a classic racing game offering high-speed pursuit and street racing action.",
     "requirements": "OS: Windows 2000/XP/7 | CPU: 1.4GHz Processor | RAM: 256 MB | Storage: 3 GB | GPU: 64 MB DirectX 9.0c compatible Video Card",
     "price": "FREE",
-    "image": "images/Screenshot 2026-09-07 133624.png",
+    "image": "images/nfsmw-cover.png",
     "screenshots": [
-      "images/Screenshot (7).png",
-      "images/Screenshot (8).png",
-      "images/Screenshot (9).png"
+      "images/nfsmw-shot1.png",
+      "images/nfsmw-shot2.png",
+      "images/nfsmw-shot3.png"
     ],
     "downloadUrl": "https://www.mediafire.com/file_premium/adkj9ovmehh2mva/NFS_Most_Wanted_2005_-_%2528www.apunkagames.com%2529.zip/file"
   }
-]
+];
