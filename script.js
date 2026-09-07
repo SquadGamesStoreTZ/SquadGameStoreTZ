@@ -26,8 +26,12 @@ function renderGameStore(gameList) {
         const priceText = String(game.price || "").trim().toUpperCase();
         const isFree = priceText === "FREE" || priceText === "0" || priceText.includes("FREE");
 
-        const actionBtnText = isFree ? "Get" : "Buy Now";
+        // Label buttons as "Download" for free items and "Buy Now" for paid items
+        const actionBtnText = isFree ? "Download" : "Buy Now";
         const actionBtnClass = isFree ? "btn-get" : "btn-download";
+
+        // Fallback target URL if downloadUrl is missing
+        const targetUrl = game.downloadUrl || "https://wa.me/255692752060";
 
         card.innerHTML = `
             <div class="card-badge">${game.platform || "Game"}</div>
@@ -35,7 +39,7 @@ function renderGameStore(gameList) {
                  alt="${game.title}" 
                  class="game-img" 
                  loading="lazy" 
-                 onerror="this.onerror=null; this.src='https://via.placeholder.com/300x180?text=Cover+Image+Not+Found';" />
+                 onerror="this.onerror=null; this.src='images/nfsmw-shot1.png';" />
             <div class="game-details">
                 <span class="category-tag">${game.category || "General"}</span>
                 <h3>${game.title}</h3>
@@ -44,7 +48,7 @@ function renderGameStore(gameList) {
                     <span class="price">${game.price}</span>
                     <div class="action-group">
                         <button class="btn-details" onclick="openDetails(${index})">Details</button>
-                        <a href="${game.downloadUrl}" target="_blank" class="btn-action ${actionBtnClass}">${actionBtnText}</a>
+                        <a href="${targetUrl}" target="_blank" ${isFree ? 'download' : ''} class="btn-action ${actionBtnClass}">${actionBtnText}</a>
                     </div>
                 </div>
             </div>
@@ -61,8 +65,9 @@ function openDetails(index) {
     const priceText = String(game.price || "").trim().toUpperCase();
     const isFree = priceText === "FREE" || priceText === "0" || priceText.includes("FREE");
 
-    const modalBtnText = isFree ? "Get" : "Buy Now";
+    const modalBtnText = isFree ? "Download" : "Buy Now";
     const modalBtnClass = isFree ? "btn-get" : "btn-download";
+    const targetUrl = game.downloadUrl || "https://wa.me/255692752060";
 
     document.getElementById("modal-title").innerText = game.title;
     document.getElementById("modal-desc").innerText = game.description || "";
@@ -70,9 +75,16 @@ function openDetails(index) {
     document.getElementById("modal-price").innerText = game.price;
     
     const buyBtn = document.getElementById("modal-buy");
-    buyBtn.href = game.downloadUrl;
+    buyBtn.href = targetUrl;
     buyBtn.innerText = modalBtnText;
     buyBtn.className = `btn-action ${modalBtnClass}`;
+
+    // Add download attribute if free to force direct downloading
+    if (isFree) {
+        buyBtn.setAttribute("download", "");
+    } else {
+        buyBtn.removeAttribute("download");
+    }
 
     const gallery = document.getElementById("modal-gallery");
     gallery.innerHTML = "";
@@ -83,7 +95,7 @@ function openDetails(index) {
             img.src = imgSrc;
             img.alt = "Screenshot";
             img.onerror = function () {
-                this.src = "https://via.placeholder.com/300x180?text=Image+Not+Found";
+                this.src = "images/nfsmw-shot1.png";
             };
             img.onclick = function () {
                 openFullScreen(imgSrc);
