@@ -4,10 +4,13 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #121212;
+    background: linear-gradient(rgba(18, 18, 18, 0.82), rgba(18, 18, 18, 0.82)), 
+                url('images/background.png') no-repeat center center fixed;
+    background-size: cover;
     color: #ffffff;
     margin: 0;
     padding: 0;
+    min-height: 100vh;
 }
 
 /* Header Navbar */
@@ -16,8 +19,9 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 12px 24px;
-    background-color: #1a1a1e;
+    background-color: rgba(26, 26, 30, 0.95);
     border-bottom: 1px solid #2c2c2e;
+    backdrop-filter: blur(8px);
 }
 
 .brand {
@@ -79,13 +83,14 @@ body {
 .trust-bar {
     display: flex;
     justify-content: space-around;
-    background: #1c1c1e;
+    background: rgba(28, 28, 30, 0.9);
     border: 1px solid #2c2c2e;
     padding: 12px 10px;
     border-radius: 8px;
     margin-bottom: 20px;
     flex-wrap: wrap;
     gap: 10px;
+    backdrop-filter: blur(5px);
 }
 
 .trust-item {
@@ -103,13 +108,20 @@ body {
 }
 
 .game-card {
-    background: #1c1c1e;
+    background: rgba(28, 28, 30, 0.92);
     border: 1px solid #2c2c2e;
     border-radius: 12px;
     overflow: hidden;
     position: relative;
     display: flex;
     flex-direction: column;
+    backdrop-filter: blur(5px);
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.game-card:hover {
+    transform: translateY(-3px);
+    border-color: #3a3a3c;
 }
 
 .card-badge {
@@ -227,7 +239,7 @@ body {
     transform: translateY(-1px);
 }
 
-/* Free Game Button (Get) */
+/* Free Game Button (Get / Download) */
 .btn-get {
     background: linear-gradient(135deg, #10b981, #059669);
     color: #ffffff;
@@ -254,6 +266,7 @@ body {
     margin-top: 30px;
     color: var(--text-muted);
     font-size: 0.85rem;
+    padding: 10px 0;
 }
 
 /* Details Modal Styles */
