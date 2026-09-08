@@ -18,8 +18,8 @@
   {
     "id": "ets2-mobile",
     "title": "Euro Truck Simulator 2 Mobile TZ",
-    "category": "Mobile Games",
     "platform": "Android",
+    "category": "Mobile Games",
     "description": "Experience driving heavy trucks across Tanzania directly on your Android phone.",
     "requirements": "OS: Android 8.0+ | RAM: 4 GB minimum | Storage: 3 GB free space",
     "price": "TZS 15,000",
@@ -79,5 +79,22 @@
       "images/nfspb4.png"
     ],
     "downloadUrl": "https://www.apunkasoftware.net/vlink/02084145540"
+  },
+  {
+    "id": 6,
+    "title": "Call of Duty: Advanced Warfare",
+    "platform": "PC",
+    "category": "Action, Shooting",
+    "description": "Call of Duty: Advanced Warfare (24.4 GB) is a first-person shooter video game developed by Sledgehammer Games and published by Activision. Released on November 4, 2014, for Windows, the game features holographic HUD projections relayed directly from equipped weapons.",
+    "requirements": "OS: Windows 7/8/8.1 (64-Bit) | Processor: Intel Core i3-530 @ 2.93 GHz / AMD Phenom II X4 810 @ 2.80 GHz | RAM: 6 GB | Storage: 55 GB available space | Graphics: NVIDIA GeForce GTS 450 @ 1 GB / ATI Radeon HD 5870 @ 1 GB | DirectX: Version 11",
+    "price": "FREE",
+    "image": "images/codaw1.png",
+    "screenshots": [
+      "images/codaw2.png",
+      "images/codaw3.png",
+      "images/codaw4.png",
+      "images/codaw5.png"
+    ],
+    "downloadUrl": "https://wa.me/255692752060?text=Hello%20Squad%20Games%2C%20I%20want%20to%20get%20Call%20of%20Duty%3A%20Advanced%20Warfare"
   }
 ]
