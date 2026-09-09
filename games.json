@@ -52,8 +52,8 @@
     "title": "Need for Speed Most Wanted 2005",
     "platform": "PC",
     "category": "Racing / Open world",
-    "description": "Need for Speed Most Wanted 2005 or NFS mw is one of the racing games nowadays, wherein you can simply download it 100 percent of its free version for free, working no survey and any charges. Also, you can download the God-of-War game that’s nice installment as well. Need for Speed Most Wanted 2005 game has also so many great and advance features.",
-    "requirements": "OS: Windows 2000/XP/7 CPU: 1.4GHz Processor RAM: 256 MB HDD: 3 GB VGA: 64 MB Video Card Sound: DirectX compatible Sound Card DX: DirectX 9.0c 8X CD-ROM Drive",
+    "description": "Need for Speed Most Wanted 2005 or NFS mw is one of the racing games nowadays, wherein you can simply download it 100 percent of its free version for free, working no survey and any charges.",
+    "requirements": "OS: Windows 2000/XP/7 | CPU: 1.4GHz Processor | RAM: 256 MB | Storage: 3 GB | GPU: 64 MB | DirectX: Version 9.0c",
     "price": "FREE",
     "image": "images/nfsmw-shot4.png",
     "screenshots": [
@@ -68,8 +68,8 @@
     "title": "Need for Speed Payback",
     "platform": "PC",
     "category": "Racing",
-    "description": "Need for Speed Payback (21.8 GB) is an Racing video game. Developed and published by Ghost Games, Electronic Arts. It was released on November 6, 2017 for Windows. NFS Payback offers action-packed arcade racing in a large open-world desert city, combining high-speed street races, off-road events, drift challenges, and cinematic story missions. Players can customize and upgrade cars across multiple classes, take part in intense police ",
-    "requirements": "OS: Windows 7/Vista/8/10 (64-bit) Processor: Intel i3 6300 @ 3.8GHz or AMD FX 8150 @ 3.6GHz with 4 hardware threads RAM: 6 GB Hard Disk: 30 GB available space Graphics Card: 2GB, Nvidia GeForce GTX 750 Ti, AMD Radeon HD 7850 Network: Broadband Internet connection DirectX: Version 11",
+    "description": "Need for Speed Payback (21.8 GB) is an action-packed arcade racing video game featuring intense police pursuits, off-road races, and custom car builds.",
+    "requirements": "OS: Windows 7/8/10 (64-bit) | Processor: Intel i3 6300 @ 3.8GHz | RAM: 6 GB | Storage: 30 GB | Graphics: NVIDIA GTX 750 Ti / AMD HD 7850 | DirectX: Version 11",
     "price": "FREE",
     "image": "images/nfspb1.png",
     "screenshots": [
@@ -78,22 +78,22 @@
       "images/nfspb5.png",
       "images/nfspb4.png"
     ],
-    "downloadUrl": "https://drive.google.com/file/d/11-D3alUTgdP7D8juCrWCJFV-QrVyPqd8/view?usp=drivesdk"
+    "downloadUrl": "https://drive.google.com/uc?export=download&id=11-D3alUTgdP7D8juCrWCJFV-QrVyPqd8"
   },
   {
     "id": 6,
     "title": "Call of Duty: Advanced Warfare",
     "platform": "PC",
     "category": "Action, Shooting",
-    "description": "Call of Duty: Advanced Warfare (24.4 GB) is a first-person shooter video game developed by Sledgehammer Games and published by Activision. Released on November 4, 2014, for Windows, the game features holographic HUD projections relayed directly from equipped weapons.",
-    "requirements": "OS: Windows 7/8/8.1 (64-Bit) | Processor: Intel Core i3-530 @ 2.93 GHz / AMD Phenom II X4 810 @ 2.80 GHz | RAM: 6 GB | Storage: 55 GB available space | Graphics: NVIDIA GeForce GTS 450 @ 1 GB / ATI Radeon HD 5870 @ 1 GB | DirectX: Version 11",
+    "description": "Call of Duty: Advanced Warfare (24.4 GB) is a first-person shooter featuring futuristic exoskeletons and holographic projections relayed directly from equipped weapons.",
+    "requirements": "OS: Windows 7/8/8.1 (64-Bit) | Processor: Intel Core i3-530 @ 2.93 GHz | RAM: 6 GB | Storage: 55 GB | Graphics: NVIDIA GTS 450 / ATI HD 5870 | DirectX: Version 11",
     "price": "FREE",
     "image": "images/codaw1.png",
     "screenshots": [
       "images/codaw2.png",
       "images/codaw3.png",
-      "images/codaw4.png",
+      "images/codaw4.png"
     ],
-    "downloadUrl": "https://drive.google.com/file/d/1ByPwHy1KmyzJLxQYqd5uypteLFlTtNFg/view?usp=drivesdk"
+    "downloadUrl": "https://drive.google.com/uc?export=download&id=1ByPwHy1KmyzJLxQYqd5uypteLFlTtNFg"
   }
 ]
