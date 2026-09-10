@@ -95,5 +95,21 @@
       "images/codaw4.png"
     ],
     "downloadUrl": "https://selar.com/8p2300r333"
+  },
+  {
+    "id": 7,
+    "title": "CarX Street",
+    "platform": "PC",
+    "category": "Racing, Sports",
+    "description": "CarX Street (10.8 GB) is an Racing, Sports video game. Developed and published by CarX Technologies, LLC. It was released on August 29, 2024 for Windows.CarX Street is an open-world driving game that blends street racing, car customization, and exploration.",
+    "requirements": "OS: Windows 10 or higher (64‑bit) Processor: Ryzen 5 2600 @ 3.4 GHz / Intel® Core™ I5-8400 @ 2.5 GHz RAM: 8 GB Hard Disk: 20 GB available space Graphics Card: Nvidia Geforce GTX 1050 TI 4 GB / Radeon RX 570 8 GB Network: Broadband Internet connection DirectX: Version 11",
+    "price": "TZS 3,000",
+    "image": "images/carxstreet.png",
+    "screenshots": [
+      "images/carxstreet1.png",
+      "images/carxstreet2.png",
+      "images/carxstreet3.png"
+    ],
+    "downloadUrl": "https://selar.com/6663610yi0"
   }
 ]
