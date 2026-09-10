@@ -11,27 +11,34 @@
     <!-- Navigation Header with Profile Picture -->
     <header class="navbar">
         <div class="brand">
-            <img src="images/profile.jpg" alt="Squad Games Profile" class="nav-avatar" />
+            <div class="avatar-glow">
+                <img src="images/profile.jpg" alt="Squad Games Profile" class="nav-avatar" />
+            </div>
             <div class="brand-text">
                 <span class="brand-title">Squad Games Store TZ</span>
                 <span class="brand-sub">Download ETS 2 PC Mods, Maps & Mobile Games</span>
             </div>
         </div>
         <nav class="nav-links">
-            <a href="https://wa.me/255692752060" target="_blank" class="nav-btn">WhatsApp Support</a>
+            <a href="https://wa.me/255692752060" target="_blank" class="nav-btn">
+                <span class="whatsapp-icon">💬</span> WhatsApp Support
+            </a>
         </nav>
     </header>
 
     <div class="container">
         <!-- Trust Indicators Bar -->
         <div class="trust-bar">
-            <div class="trust-item">⚡ Instant WhatsApp Delivery</div>
-            <div class="trust-item">🔒 Safe Local Payments</div>
-            <div class="trust-item">🎮 Tested Mods & Maps</div>
+            <div class="trust-item"><span class="trust-icon">⚡</span> Instant WhatsApp Delivery</div>
+            <div class="trust-item"><span class="trust-icon">🔒</span> Safe Local Payments</div>
+            <div class="trust-item"><span class="trust-icon">🎮</span> Tested Mods & Maps</div>
         </div>
 
         <main id="game-grid" class="game-grid">
-            <p style="text-align: center; color: #94a3b8;">Loading games...</p>
+            <div class="loading-state">
+                <div class="spinner"></div>
+                <p>Loading epic games...</p>
+            </div>
         </main>
 
         <footer class="footer-note">
@@ -151,11 +158,13 @@
 
                 card.innerHTML = `
                     <div class="card-badge">${game.platform || "Game"}</div>
-                    <img src="${game.image}" 
-                         alt="${game.title}" 
-                         class="game-img" 
-                         loading="lazy" 
-                         onerror="this.onerror=null; this.src='images/nfsmw-shot1.png';" />
+                    <div class="game-img-wrapper">
+                        <img src="${game.image}" 
+                             alt="${game.title}" 
+                             class="game-img" 
+                             loading="lazy" 
+                             onerror="this.onerror=null; this.src='images/nfsmw-shot1.png';" />
+                    </div>
                     <div class="game-details">
                         <span class="category-tag">${game.category || ""}</span>
                         <h3>${game.title}</h3>
