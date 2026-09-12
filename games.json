@@ -144,5 +144,22 @@
       "images/gta44.png"
     ],
     "downloadUrl": "https://selar.com/q5b93i8v8o"
+  },
+  {
+    "id": 10,
+    "title": "Call of Duty: Black Ops 1",
+    "platform": "PC",
+    "category": "First-person shooter",
+    "description": "Call of Duty: Black Ops 1 (7.27 GB) is a classic action, first-person shooter set during the Cold War, placing players in intense covert missions across global hotspots. Experience gripping single-player campaigns, tactical combat, and realistic weapons as you complete stealthy objectives.",
+    "requirements": "OS: Windows XP/Vista/7 CPU: Intel Core2 Duo E6600 or AMD Phenom X3 8750 or better RAM: 2 GB Hard Drive Space: 12 GB Video Card: Shader 3.0 or better 256MB NVIDIA GeForce 8600GT or better Sound Card: DirectX 9.0 Compliant DirectX: 9.0c",
+    "price": "FREE",
+    "image": "images/codbo.png",
+    "screenshots": [
+      "images/codbo1.png",
+      "images/codbo2.png",
+      "images/codbo3.png",
+      "images/codbo4.png"
+    ],
+    "downloadUrl": "https://drive.google.com/file/d/1ek-rQVM3C6amEro2nl0H8YCGQHCgwBgO/view?usp=drive_link"
   }
 ]
