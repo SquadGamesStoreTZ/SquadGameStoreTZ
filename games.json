@@ -127,5 +127,21 @@
       "images/gta53.png"
     ],
     "downloadUrl": "https://selar.com/6k3k120fk9"
+  },
+  {
+    "title": "GTA 4",
+    "platform": "PC",
+    "category": "Action-adventure, Open World",
+    "description": "GTA 4 (13.2 GB) is a popular open-world action video game. Developed and published by Rockstar North, Rockstar Games. It was released on December 2, 2008 for Windows. GTA IV is a legendary open-world game centered on Niko Bellic’s journey through Liberty City",
+    "requirements": "OS: Windows XP/Vista/7 Processor: Intel Core 2 DUO @ 1.8 GHz / AMD Athlon 64 X2 @ 2.4 GHz RAM: 2 GB Hard Disk: 16 GB available space Graphics Card: 256 MB, nVidia GeForce 7900 / ATI Radeon X1900 Sound Card: DirectX Compatible DirectX: Version 9.0c DVD Rom Drive",
+    "price": "TZS 5,000",
+    "image": "gta4.png",
+    "screenshots": [
+        "gta41.png",
+        "gta42.png",
+        "gta43.png",
+        "gta44.png"
+    ],
+    "downloadUrl": "https://selar.com/q5b93i8v8o"
   }
 ]
